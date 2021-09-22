@@ -1,23 +1,47 @@
+/* changing the h1 styling */
 h1{
     font-size: 130px;
     color: #F1AB86;
     text-align: center;
 }
+
+/* changing body styling */
+body {
+    background-color:#FFCDB2;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* changing button styling */
 #buttons{
     text-align: center;
 }
+
+/* changing h2 styling */
 h2{
-font-size:75px;
+    font-size:75px;
 }
 
+/* changing link styling */
+a{
+    text-decoration: none;
+    color: #F1AB86;
+}
+
+/* changing link styling on hover */
+a:hover{
+    text-decoration: underline;
+}
+
+/* changing button class styling */
 .button {
-    color: white;
-    text-decoration: none;
-    background-color: #50767C;
-    padding: 15px 32px;
-    text-decoration: none;
-    border: none;
-    border-radius: 20px;
-    margin: 2em;
-    cursor: pointer;
+     background-color: white;
+      border-color: white;
+      border-style: none;
+      padding: 15px 50px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 20px;
+      cursor: pointer;
+      border-radius: 20px;
 }

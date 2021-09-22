@@ -1,12 +1,18 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
-    <title>Getting Started: Serving Web Content</title>
+
+<head>
+    <!-- setup-->
+    <title>Bumper Stickers!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <!--connscting css + js-->
+    <!--connecting css + js-->
     <link rel="stylesheet" th:href="@{/style.css}"/>
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css"/>-->
+
+    <!--adding pretty fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
 </head>
 
@@ -14,7 +20,7 @@
 <h1>BUMPER STICKERS!</h1>
 <div id="buttons">
     <button id="postButton" class="button"><a href="/post"><h2>POST</h2></a></button>
-    <button id="mapButton" class="button"><a href="/content"><h2>MAP</h2></a></button>
+    <button id="mapButton" class="button"><a href="/content"><h2>VIEW</h2></a></button>
 </div>
 
 </body>

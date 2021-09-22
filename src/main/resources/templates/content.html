@@ -2,14 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 
-    <!--bootstrap styling-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!--mapbox integration-->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
-
     <!-- connecting to js and css-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css"/>
     <script type="text/javascript" th:src="@{/mapContent.js}"></script>
     <link rel="stylesheet" th:href="@{/contentStyle.css}"/>
 
@@ -22,5 +15,13 @@
 <body>
     <h1>Map Page</h1>
     <div id="map"></div>
+
+    <!-- execute initMap function in js-->
+    <!--need to add api key here-->
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly"
+            async
+    ></script>
+
 </body>
 </html>
