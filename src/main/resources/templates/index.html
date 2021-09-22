@@ -1,10 +1,21 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head> 
-    <title>Getting Started: Serving Web Content</title> 
+    <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!--connscting css + js-->
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css"/>-->
+
 </head>
+
 <body>
-    <p>Get your greeting <a href="/hello">here</a></p>
+<h1>BUMPER STICKERS!</h1>
+<div id="buttons">
+    <button id="postButton" class="button"><a href="/post"><h2>POST</h2></a></button>
+    <button id="mapButton" class="button"><a href="/content"><h2>MAP</h2></a></button>
+</div>
+
 </body>
 </html>

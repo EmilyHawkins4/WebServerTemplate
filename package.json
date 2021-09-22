@@ -1,0 +1,23 @@
+{
+  "name": "WebServerTemplate",
+  "version": "1.0.0",
+  "description": "This is a Web Server application, modified from the Spring MVC serving web content tutorial repository (found [here](https://github.com/spring-guides/gs-serving-web-content)). A Web Server is an application that receives HTTP requests and returns web pages. Spring is a framework that we use to write our web server. It implements a bunch of features that are common to all web servers so we can focus on the portions that unique to our application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilyHawkins4/WebServerTemplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmilyHawkins4/WebServerTemplate/issues"
+  },
+  "homepage": "https://github.com/EmilyHawkins4/WebServerTemplate#readme",
+  "dependencies": {
+    "mapbox-gl": "^2.4.1"
+  }
+}

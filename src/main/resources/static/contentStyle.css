@@ -1,0 +1,15 @@
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 75%;
+}
+#content{
+    width: 35%;
+    float:right;
+    padding: 5px;
+}
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

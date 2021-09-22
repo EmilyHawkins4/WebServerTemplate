@@ -1,0 +1,23 @@
+h1{
+    font-size: 130px;
+    color: #F1AB86;
+    text-align: center;
+}
+#buttons{
+    text-align: center;
+}
+h2{
+font-size:75px;
+}
+
+.button {
+    color: white;
+    text-decoration: none;
+    background-color: #50767C;
+    padding: 15px 32px;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    margin: 2em;
+    cursor: pointer;
+}

@@ -17,4 +17,10 @@ public class MainController {
 		model.addAttribute("name", name);
 		return "hello";
 	}
+
+	@GetMapping("/content")
+	public String content() { return "content"; }
+
+	@GetMapping("/post")
+	public String post() { return "post"; }
 }
