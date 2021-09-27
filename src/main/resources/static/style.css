@@ -1,14 +1,13 @@
 /* changing the h1 styling */
 h1{
     font-size: 130px;
-    color: #F1AB86;
+    color: pink;
     text-align: center;
 }
 
 /* changing body styling */
 body {
-    background-color:#FFCDB2;
-    font-family: 'Montserrat', sans-serif;
+    background-color: teal;
 }
 
 /* changing button styling */
@@ -24,7 +23,7 @@ h2{
 /* changing link styling */
 a{
     text-decoration: none;
-    color: #F1AB86;
+    color: yellow;
 }
 
 /* changing link styling on hover */
@@ -35,7 +34,7 @@ a:hover{
 /* changing button class styling */
 .button {
      background-color: white;
-      border-color: white;
+      border-color: purple;
       border-style: none;
       padding: 15px 50px;
       text-align: center;

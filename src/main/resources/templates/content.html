@@ -6,6 +6,9 @@
     <script type="text/javascript" th:src="@{/mapContent.js}"></script>
     <link rel="stylesheet" th:href="@{/contentStyle.css}"/>
 
+    <!--connecting to bootstrap styling to format cards-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <!-- page basics-->
     <meta charset="UTF-8">
     <title>Stickers!</title>
@@ -13,8 +16,12 @@
 </head>
 
 <body>
-    <h1>Map Page</h1>
+
+    <!-- js will find this div and put the map here-->
     <div id="map"></div>
+
+    <!--js will put cards here-->
+    <div id="content"></div>
 
     <!-- execute initMap function in js-->
     <!--need to add api key here-->

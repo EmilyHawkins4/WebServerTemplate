@@ -1,15 +1,20 @@
+/* map styling */
 #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 75%;
+  position: fixed;
+  width: 65%;
+  float: left;
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 #content{
-    width: 35%;
-    float:right;
-    padding: 5px;
-}
-#cardContainer {
-    display: flex;
-    flex-wrap: wrap;
+  position: relative;
+  width: 35%;
+  float: right;
+  height: 100%;
 }
