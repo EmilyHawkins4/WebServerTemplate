@@ -6,15 +6,20 @@
   height: 100%;
 }
 
+/* map styling */
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+/* styling the cards */
 #content{
   position: relative;
   width: 35%;
   float: right;
   height: 100%;
+}
+#pageHeading {
+text-align: center;
 }

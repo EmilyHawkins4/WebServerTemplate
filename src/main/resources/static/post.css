@@ -1,0 +1,66 @@
+/* styling the body */
+body{
+    background-color: yellow;
+}
+
+/* styling the heading */
+#pageHeading{
+    text-align: center;
+    background-color: pink;
+    padding: 5px;
+}
+
+/* styling h1 */
+h1{
+    font-size: 100px;
+}
+
+/* styling input boxes */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* styling submit button */
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* styling submit button on hover */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* map styling */
+#map {
+  position: fixed;
+  width: 300px;
+}
+
+/* map styling */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* styling html form */
+#htmlForm {
+    width:700px;
+    margin: auto;
+    background-color: orange;
+    padding: 30px;
+}

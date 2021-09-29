@@ -3,13 +3,13 @@
 <head>
 
     <!-- connecting to js and css-->
-    <script type="text/javascript" th:src="@{/mapContent.js}"></script>
-    <link rel="stylesheet" th:href="@{/contentStyle.css}"/>
+    <script type="text/javascript" th:src="@{/content.js}"></script>
+    <link rel="stylesheet" th:href="@{/content.css}"/>
 
-    <!--connecting to bootstrap styling to format cards-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--bootstrap styling to format cards-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <!-- page basics-->
+    <!--page setup-->
     <meta charset="UTF-8">
     <title>Stickers!</title>
 
@@ -17,12 +17,24 @@
 
 <body>
 
-    <!-- js will find this div and put the map here-->
+    <!--js will find this div and put the map here-->
     <div id="map"></div>
 
-    <!--js will put cards here-->
-    <div id="content"></div>
+    <!--this div shows the bumper stickers-->
+    <div id="pageContent">
 
+        <!--this div holds the page heading-->
+        <div id="pageHeading">
+            <h1>Bumper Stickers!</h1>
+            <button><a href="/">Back to Home!</a></button>
+        </div>
+
+        <!--js will find this div and put the cards here-->
+        <div id="content"></div>
+
+    </div>
+
+    <!--this makes the map go-->
     <!-- execute initMap function in js-->
     <!--need to add api key here-->
     <script
