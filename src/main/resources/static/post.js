@@ -1,8 +1,6 @@
 // map setup
 let map;
 
-
-
 function initMap() {
     console.log("can u see this?");
   map = new google.maps.Map(document.getElementById("map"), {

@@ -25,11 +25,11 @@
 </head>
 
 <body>
-
+<div id="everything">
 <!--page heading-->
 <div id="pageHeading">
-    <h1>BUMPER STICKERS</h1>
-    <button><a href="/">Back to home!</a></button>
+    <h1 class="heading">BUMPER STICKERS</h1>
+    <button class="b2hButton"><a href="/">Back to home!</a></button>
 </div>
 
 
@@ -38,27 +38,27 @@
 <form onsubmit="return submitForm()">
 
     <!--input name-->
-    <label>Name</label>
+    <label class="inputLabel">Name</label>
     <input type="text" id="name" placeholder="enter your name">
 
     <!--input tags-->
-    <label>Tags</label>
+    <label class="inputLabel">Tags</label>
     <input type="text" id="tags" placeholder="enter tags">
 
     <!--input caption-->
-    <label>Caption</label>
+    <label class="inputLabel">Caption</label>
     <input type="text" id="caption" placeholder="enter your caption">
 
     <!--input image-->
-    <label>Image</label>
+    <label class="inputLabel">Image</label>
     <input type="file" id="img" name="img" accept="image/*">
 
     <!--select location-->
+    <label class="inputLabel">Location</label>
     <div class="container">
 
         <!--button to trigger modal-->
-        <label>Select your location</label>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Select Position</button>
+        <button type="button" data-toggle="modal" data-target="#myModal">Select Position</button>
 
         <!--when the button created above is clicked this modal opens-->
         <div class="modal fade" id="myModal" role="dialog">
@@ -78,8 +78,7 @@
                     </div>
 
                     <!--adding the map to the modal-->
-
-
+                    <div id="map"></div>
 
                     <!--creating save button-->
                     <div class="modal-footer">
@@ -97,7 +96,7 @@
 
 </form>
 </div>
-<div id="map"></div>
+</div>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly"
         async

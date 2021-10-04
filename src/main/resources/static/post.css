@@ -1,5 +1,5 @@
 /* styling the body */
-body{
+#everything{
     background-color: yellow;
     font-family: 'Montserrat', sans-serif;
 }
@@ -10,9 +10,16 @@ body{
     background-color: pink;
     padding: 5px;
 }
+.b2hButton {
+    font-size:20px;
+    text-decoration: none;
+}
+.inputLabel{
+    font-size: 30px;
+}
 
 /* styling h1 */
-h1{
+.heading{
     font-size: 100px;
 }
 
