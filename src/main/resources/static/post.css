@@ -10,9 +10,30 @@
     background-color: pink;
     padding: 5px;
 }
-.b2hButton {
+.button {
     font-size:20px;
     text-decoration: none;
+    background-color: white;
+    border-style: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 5px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.button-small {
+    font-size:15px;
+    text-decoration: none;
+    background-color: white;
+    border-style: none;
+    padding: 5px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 6px;
 }
 .inputLabel{
     font-size: 30px;
