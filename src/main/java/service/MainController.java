@@ -3,6 +3,7 @@ package service;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -19,8 +20,16 @@ public class MainController {
 	}
 
 	@GetMapping("/content")
-	public String content() { return "content"; }
+	public String content() {
+		return "content";
+	}
 
 	@GetMapping("/post")
 	public String post() { return "post"; }
+
+	/*@PostMapping("/post")
+		public String postForm(){
+
+		}*/
+
 }

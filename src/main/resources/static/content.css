@@ -14,12 +14,15 @@ body {
   padding: 0;
 }
 /* styling the cards */
-#content{
-  position: relative;
+#pageContent{
+  position: sticky;
   width: 35%;
   float: right;
   height: 100%;
 }
 #pageHeading {
 text-align: center;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
 }

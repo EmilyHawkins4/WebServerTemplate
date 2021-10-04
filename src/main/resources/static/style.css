@@ -1,13 +1,14 @@
 /* changing the h1 styling */
 h1{
     font-size: 130px;
-    color: pink;
+    color: #ff7d5c;
     text-align: center;
+    font-weight: bold;
 }
 
 /* changing body styling */
 body {
-    background-color: teal;
+    background-color: #ffb4a2;
 }
 
 /* changing button styling */
@@ -34,7 +35,6 @@ a:hover{
 /* changing button class styling */
 .button {
      background-color: white;
-      border-color: purple;
       border-style: none;
       padding: 15px 50px;
       text-align: center;
@@ -43,4 +43,8 @@ a:hover{
       margin: 4px 20px;
       cursor: pointer;
       border-radius: 20px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
 }
