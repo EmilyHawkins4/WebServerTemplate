@@ -6,8 +6,8 @@ function initMap() {
 
   // creating the google map
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
+    center: { lat: 47.62607555, lng: -122.30418194524279 },
+    zoom: 12,
   });
 
    // this div holds the cards on the map page
