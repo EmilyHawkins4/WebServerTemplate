@@ -1,10 +1,32 @@
 <!DOCTYPE HTML>
-<html>
-<head> 
-    <title>Getting Started: Serving Web Content</title> 
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!--page setup-->
+    <title>Bumper Stickers!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!--connecting css + js-->
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+
+    <!--pretty font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-    <p>Get your greeting <a href="/hello">here</a></p>
+
+<!-- page heading-->
+<h1>BUMPER STICKERS!</h1>
+
+<!-- navigation buttons-->
+<div id="buttons">
+    <button id="postButton" class="button"><a href="/post"><h2>POST</h2></a></button>
+    <button id="mapButton" class="button"><a href="/content"><h2>VIEW</h2></a></button>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- connecting to js and css-->
+    <script type="text/javascript" th:src="@{/content.js}"></script>
+    <link rel="stylesheet" th:href="@{/content.css}"/>
+
+    <!--bootstrap styling to format cards-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!--page setup-->
+    <meta charset="UTF-8">
+    <title>Stickers!</title>
+
+    <!--pretty font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--js will find this div and put the map here-->
+    <div id="map"></div>
+
+    <!--this div shows the bumper stickers-->
+    <div id="pageContent">
+
+        <!--this div holds the page heading-->
+        <div id="pageHeading">
+            <h1>Bumper Stickers!</h1>
+            <button><a href="/">Back to Home!</a></button>
+        </div>
+
+        <!--js will find this div and put the cards here-->
+        <div id="content"></div>
+
+    </div>
+
+    <!--this makes the map go-->
+    <!-- execute initMap function in js-->
+    <!--need to add api key here-->
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly"
+            async
+    ></script>
+
+</body>
+</html>

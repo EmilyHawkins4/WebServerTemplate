@@ -1,0 +1,28 @@
+/* map styling */
+#map {
+  position: fixed;
+  width: 65%;
+  float: left;
+  height: 100%;
+}
+
+/* map styling */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* styling the cards */
+#pageContent{
+  position: sticky;
+  width: 35%;
+  float: right;
+  height: 100%;
+}
+#pageHeading {
+text-align: center;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!--page setup-->
+    <title>Post</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- connecting to js and css-->
+    <link rel="stylesheet" th:href="@{/post.css}"/>
+    <script type="text/javascript" th:src="@{/post.js}"></script>
+
+    <!--these make the modal work-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!--pretty font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="everything">
+<!--page heading-->
+<div id="pageHeading">
+    <h1 class="heading">BUMPER STICKERS</h1>
+    <button class="button"><a href="/">Back to home!</a></button>
+</div>
+
+
+<!--posting form-->
+<div id="htmlForm">
+<form onsubmit="return submitForm()">
+
+    <!--input name-->
+    <label class="inputLabel">Name</label>
+    <input type="text" id="name" placeholder="enter your name">
+
+    <!--input tags-->
+    <label class="inputLabel">Tags</label>
+    <input type="text" id="tags" placeholder="enter tags">
+
+    <!--input caption-->
+    <label class="inputLabel">Caption</label>
+    <input type="text" id="caption" placeholder="enter your caption">
+
+    <!--input image-->
+    <label class="inputLabel">Image</label>
+    <input class = "button" type="file" id="img" name="img" accept="image/*">
+
+    <!--select location-->
+    <label class="inputLabel">Location</label>
+    <div class="container">
+
+        <!--button to trigger modal-->
+        <button class="button-small" type="button" data-toggle="modal" data-target="#myModal">Select Position</button>
+
+        <!--when the button created above is clicked this modal opens-->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <!--making the header of the modal-->
+                    <div class="modal-header">
+
+                        <!--making the x close button-->
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        <!--adding the title of the modal-->
+                        <h4 class="modal-title">Select Location!</h4>
+                    </div>
+
+                    <!--adding the map to the modal-->
+                    <div id="map"></div>
+
+                    <!--creating save button-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--submit button-->
+    <input type="submit" value="submit" onclick="submitForm()">
+
+</form>
+</div>
+</div>
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly"
+        async
+></script>
+</body>
+</html>
