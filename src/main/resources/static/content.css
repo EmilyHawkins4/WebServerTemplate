@@ -1,7 +1,7 @@
 /* map styling */
 #map {
   position: fixed;
-  width: 65%;
+  width: 50%;
   float: left;
   height: 100%;
 }
@@ -16,7 +16,7 @@ body {
 /* styling the cards */
 #pageContent{
   position: sticky;
-  width: 35%;
+  width: 50%;
   float: right;
   height: 100%;
 }

@@ -15,7 +15,7 @@ function initMap() {
   function submitForm(){
 
     // alert to tell them the sticker was posted
-    alert("sticker is posted!");
+        alert("sticker is posted!");
 
     // sets form value with id of name to variable name
     var name = document.getElementById("name").value;
