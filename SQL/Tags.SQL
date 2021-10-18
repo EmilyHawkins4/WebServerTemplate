@@ -1,11 +1,23 @@
 IF OBJECT_ID('Tags', 'U') IS NOT NULL
 
+
+
 DROP TABLE Tags
+
+
 
 GO
 
+
+
 CREATE TABLE Tags
 
-(tagId INT NOT NULL PRIMARY KEY,
 
-tagname VARCHAR(300) NOT NULL)
+
+(tagId INT NOT NULL IDENTITY(1,1),
+
+
+
+tagname VARCHAR(300) NOT NULL,
+
+PRIMARY KEY (tagId))

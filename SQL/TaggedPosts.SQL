@@ -6,7 +6,7 @@ GO
 
 CREATE TABLE TaggedPosts
 
-(tagId INT NOT NULL,
+(
 
 PostId INT NOT NULL
 
