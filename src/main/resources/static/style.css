@@ -8,13 +8,17 @@ h1{
 
 /* changing body styling */
 body {
-    background-color: #ffb4a2;
+    background-color: white;
 }
 
 /* changing button styling */
 #buttons{
     text-align: center;
 }
+.stuff {
+    background-color: blue;
+}
+
 
 /* changing h2 styling */
 h2{
@@ -24,7 +28,7 @@ h2{
 /* changing link styling */
 a{
     text-decoration: none;
-    color: yellow;
+    color: #304169;
 }
 
 /* changing link styling on hover */
@@ -34,7 +38,7 @@ a:hover{
 
 /* changing button class styling */
 .button {
-     background-color: white;
+     background-color: pink;
       border-style: none;
       padding: 15px 50px;
       text-align: center;

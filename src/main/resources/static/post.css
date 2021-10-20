@@ -1,29 +1,30 @@
 /* styling the body */
 #everything{
-    background-color: yellow;
+    background-color: white;
     font-family: 'Montserrat', sans-serif;
 }
 
 /* styling the heading */
 #pageHeading{
     text-align: center;
-    background-color: pink;
+    background-color: white;
     padding: 5px;
+    color: #ff7d5c
 }
-.button {
+.button-small {
     font-size:20px;
     text-decoration: none;
-    background-color: white;
+    color: yellow;
+    background-color: pink;
     border-style: none;
     padding: 5px 10px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     margin: 2px 5px;
     cursor: pointer;
     border-radius: 6px;
 }
-.button-small {
+.button {
     font-size:15px;
     text-decoration: none;
     background-color: white;
@@ -58,7 +59,7 @@ input[type=text], select {
 /* styling submit button */
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #304169;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -69,7 +70,7 @@ input[type=submit] {
 
 /* styling submit button on hover */
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #222d47;
 }
 
 /* map styling */
@@ -90,6 +91,6 @@ body {
 #htmlForm {
     width:700px;
     margin: auto;
-    background-color: orange;
+    background-color: pink;
     padding: 30px;
 }
