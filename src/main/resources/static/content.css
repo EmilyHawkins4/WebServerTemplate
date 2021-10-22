@@ -12,19 +12,22 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #ffc6b8;
 }
 h1{
-color: #ff7d5c
+color: #ff7d5c;
+font-size: 70px;
 }
 /* styling the cards */
 #pageContent{
-  position: sticky;
+  /*position: sticky;*/
   width: 50%;
   float: right;
   height: 100%;
 }
 #pageHeading {
 text-align: center;
+padding: 20px;
 }
 body {
     font-family: 'Montserrat', sans-serif;

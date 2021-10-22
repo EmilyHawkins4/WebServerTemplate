@@ -8,7 +8,7 @@ h1{
 
 /* changing body styling */
 body {
-    background-color: white;
+    background-color: #ffc6b8;
 }
 
 /* changing button styling */
@@ -22,13 +22,13 @@ body {
 
 /* changing h2 styling */
 h2{
-    font-size:75px;
+    font-size:85px;
 }
 
 /* changing link styling */
 a{
     text-decoration: none;
-    color: #304169;
+    color: #ffc6b8;
 }
 
 /* changing link styling on hover */
@@ -38,7 +38,18 @@ a:hover{
 
 /* changing button class styling */
 .button {
-     background-color: pink;
+     background-color:#304169;
+      border-style: none;
+      padding: 15px 50px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 20px;
+      cursor: pointer;
+      border-radius: 20px;
+}
+.button:hover {
+     background-color: #ff7d5c;
       border-style: none;
       padding: 15px 50px;
       text-align: center;

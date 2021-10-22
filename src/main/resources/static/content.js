@@ -13,6 +13,8 @@ function initMap() {
    // this div holds the cards on the map page
     var cardDiv = document.createElement("div")
     cardDiv.id = "cardDiv"
+    cardDiv.className = "card-deck"
+
 
         // this will loop through every sticker in the database
         for(i=0;i<10;i++){
@@ -27,7 +29,7 @@ function initMap() {
                 var photo = document.createElement("img")
                 photo.className = "card-img-top"
                 photo.id = "card-photo-"+i
-                photo.width = "100"
+                //photo.width = "300"
                 photo.src = "https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg" // eventually change to sticker image source
                 card.appendChild(photo)
 

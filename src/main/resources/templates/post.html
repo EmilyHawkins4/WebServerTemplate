@@ -20,7 +20,7 @@
     <!--pretty font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
 </head>
 
@@ -92,32 +92,32 @@
     </div>
 
     <!--submit button-->
-    <input type="submit" value="submit" onclick="confetti()">
+    <input type="submit" value="submit" onclick="submitForm()">
+
+    <!-- the two scripts below make the confetti go!-->
     <script src="./confetti.js"></script>
     <script>
-        function confetti(){
-            const start = () => {
-                setTimeout(function(){
-                    confetti.start();
-                },1000)
+        const start = () => {
+                setTimeout(function() {
+                    confetti.start()
+                }, 100); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
             };
 
             const stop = () => {
-                setTimeout(function(){
-                    confetti.stop();
-                }, 5000)
+                setTimeout(function() {
+                    confetti.stop()
+                }, 5000);
             };
-        start();
-        stop();
-        submitForm();
-    }
+
+            start();
+            stop();
     </script>
 
 </form>
 </div>
 </div>
 <script
-        src="https://maps.googleapis.com/maps/api/js?key=APIKEYHERE&callback=initMap&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap&v=weekly"
         async
 ></script>
 </body>
