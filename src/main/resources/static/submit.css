@@ -1,4 +1,5 @@
 
+/* changing heading styling */
 h1{
     font-size: 130px;
     color: #ff7d5c;
@@ -24,6 +25,7 @@ a:hover{
     text-decoration: underline;
 }
 
+/* changing button styling on hover */
 .button:hover{
     font-size: 30px;
      background-color: #ff7d5c;
@@ -36,6 +38,8 @@ a:hover{
       cursor: pointer;
       border-radius: 20px;
 }
+
+/* changing button styling */
 .button{
     font-size: 30px;
      background-color: white;

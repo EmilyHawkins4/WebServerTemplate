@@ -1,3 +1,5 @@
+// this page makes the confetti go!
+
 var confetti = {
 	maxCount: 150,		//set max confetti count
 	speed: 2,			//set the particle animation speed

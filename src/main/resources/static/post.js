@@ -1,6 +1,7 @@
 // map setup
 let map;
 
+// making the map
 function initMap() {
     console.log("can u see this?");
   map = new google.maps.Map(document.getElementById("map"), {
@@ -30,7 +31,6 @@ function initMap() {
 
 
     // sets form value of longitude to lng
-    debugger;
     window.location.href = "/submit";
     console.log(name);
   }

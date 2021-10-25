@@ -15,10 +15,6 @@ body {
 #buttons{
     text-align: center;
 }
-.stuff {
-    background-color: blue;
-}
-
 
 /* changing h2 styling */
 h2{
@@ -48,6 +44,8 @@ a:hover{
       cursor: pointer;
       border-radius: 20px;
 }
+
+/* changing button styling on hover */
 .button:hover {
      background-color: #ff7d5c;
       border-style: none;
@@ -60,6 +58,7 @@ a:hover{
       border-radius: 20px;
 }
 
+/* font styling */
 body {
     font-family: 'Montserrat', sans-serif;
 }

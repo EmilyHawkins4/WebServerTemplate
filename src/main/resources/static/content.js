@@ -10,6 +10,7 @@ function initMap() {
     zoom: 12,
   });
 
+// testing adding a marker
  const beachMarker = new google.maps.Marker({
      position: { lat: 47.6260456, lng: -122.3064097 },
      title: "Hello World!",
@@ -65,10 +66,13 @@ function initMap() {
                     name.innerHTML="posted by: user" // eventually change to sticker tags
                     cardBody.appendChild(name)
 
+                // adds cardBody to card
                 card.appendChild(cardBody)
 
+            // adds cars to cardDiv
             cardDiv.appendChild(card)
         }
 
+        // adds cardDiv to the content div
         document.getElementById("content").appendChild(cardDiv);
 }

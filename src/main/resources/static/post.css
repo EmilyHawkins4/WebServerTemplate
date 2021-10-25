@@ -11,6 +11,8 @@
     padding: 5px;
     color: #ff7d5c
 }
+
+/* styling one type of button */
 .button-small {
     font-size:20px;
     border-radius: 6px;
@@ -25,13 +27,19 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+
+/* styling inout field */
 .inputfield {
     padding: 30px;
 }
+
+/* styling links */
 a{
     text-decoration: none;
     color: yellow;
 }
+
+/* styling one type of button */
 .button {
     font-size:15px;
     text-decoration: none;
@@ -44,6 +52,8 @@ a{
     cursor: pointer;
     border-radius: 6px;
 }
+
+/* styling the labels */
 .inputLabel{
     font-size: 30px;
 }
