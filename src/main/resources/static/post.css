@@ -25,6 +25,9 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+.inputfield {
+    padding: 30px;
+}
 a{
     text-decoration: none;
     color: yellow;

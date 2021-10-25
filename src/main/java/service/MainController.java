@@ -27,6 +27,9 @@ public class MainController {
 	@GetMapping("/post")
 	public String post() { return "post"; }
 
+	@GetMapping("/submit")
+	public String submit() { return "submit"; }
+
 	/*@PostMapping("/post")
 		public String postForm(){
 

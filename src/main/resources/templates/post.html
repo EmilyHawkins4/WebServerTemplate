@@ -35,27 +35,36 @@
 
 <!--posting form-->
 <div id="htmlForm">
-<form onsubmit="return submitForm()">
+<form onsubmit="return submitForm()" th:action="@{/submit}">
 
     <!--input name-->
-    <label class="inputLabel">Name</label>
-    <input type="text" id="name" placeholder="enter your name">
+    <div class = "inputfield">
+        <label class="inputLabel">Name</label>
+        <input type="text" id="name" placeholder="enter name">
+    </div>
 
     <!--input tags-->
-    <label class="inputLabel">Tags</label>
-    <input type="text" id="tags" placeholder="enter tags">
+    <div class = "inputfield">
+        <label class="inputLabel">Tags</label>
+        <input type="text" id="tags" placeholder="enter tags">
+    </div>
 
     <!--input caption-->
-    <label class="inputLabel">Caption</label>
-    <input type="text" id="caption" placeholder="enter your caption">
+    <div class = "inputfield">
+        <label class="inputLabel">Caption</label>
+        <input type="text" id="caption" placeholder="enter caption">
+    </div>
 
     <!--input image-->
-    <label class="inputLabel">Image</label>
-    <input class = "button" type="file" id="img" name="img" accept="image/*">
+    <div class = "inputfield">
+        <label class="inputLabel">Image</label>
+        <input class = "button" type="file" id="img" name="img" accept="image/*">
+    </div>
 
     <!--select location-->
-    <label class="inputLabel">Location</label>
-    <div class="container">
+    <div class = "inputfield">
+        <label class="inputLabel">Location</label>
+        <div class="container">
 
         <!--button to trigger modal-->
         <button class="button" type="button" data-toggle="modal" data-target="#myModal">Select Position</button>
@@ -90,28 +99,11 @@
         </div>
 
     </div>
+    </div>
 
     <!--submit button-->
     <input type="submit" value="submit" onclick="submitForm()">
 
-    <!-- the two scripts below make the confetti go!-->
-    <script src="./confetti.js"></script>
-    <script>
-        const start = () => {
-                setTimeout(function() {
-                    confetti.start()
-                }, 100); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
-            };
-
-            const stop = () => {
-                setTimeout(function() {
-                    confetti.stop()
-                }, 5000);
-            };
-
-            start();
-            stop();
-    </script>
 
 </form>
 </div>

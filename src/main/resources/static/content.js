@@ -10,6 +10,12 @@ function initMap() {
     zoom: 12,
   });
 
+ const beachMarker = new google.maps.Marker({
+     position: { lat: 47.6260456, lng: -122.3064097 },
+     title: "Hello World!",
+     map,
+   });
+
    // this div holds the cards on the map page
     var cardDiv = document.createElement("div")
     cardDiv.id = "cardDiv"

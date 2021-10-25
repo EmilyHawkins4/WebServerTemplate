@@ -14,9 +14,6 @@ function initMap() {
 // this function is executed when the user selects the submit button
   function submitForm(){
 
-    // alert to tell them the sticker was posted
-        alert("sticker is posted!");
-
     // sets form value with id of name to variable name
     var name = document.getElementById("name").value;
 
@@ -33,7 +30,7 @@ function initMap() {
 
 
     // sets form value of longitude to lng
-
-
+    debugger;
+    window.location.href = "/submit";
     console.log(name);
   }
