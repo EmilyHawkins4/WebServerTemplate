@@ -12,17 +12,44 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #ffc6b8;
 }
+
+/* photo formatting*/
+.photo {
+    display: block;
+      margin-left: auto;
+      margin-right: auto;
+}
+.card-img-top {
+    width: 18rem;
+}
+
+/* heading styling */
+h1{
+color: #ff7d5c;
+font-size: 70px;
+}
+
 /* styling the cards */
 #pageContent{
-  position: sticky;
+  /*position: sticky;*/
   width: 50%;
   float: right;
   height: 100%;
 }
-#pageHeading {
+
+h2 {
 text-align: center;
 }
+
+/* heading styling */
+#pageHeading {
+text-align: center;
+padding: 20px;
+}
+
+/* font */
 body {
     font-family: 'Montserrat', sans-serif;
 }

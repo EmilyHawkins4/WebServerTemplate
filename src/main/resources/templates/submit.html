@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!--page setup-->
+    <title>Bumper Stickers!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!--connecting css + js-->
+    <link rel="stylesheet" th:href="@{/submit.css}"/>
+
+    <!--pretty font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- page heading-->
+<h1>YOUR STICKER IS SUBMITTED!</h1>
+<button class="button"><a href="/">BACK TO HOME</a></button>
+
+
+<!-- the two scripts below make the confetti go!-->
+<script src="./confetti.js"></script>
+<script>
+        const start = () => {
+                setTimeout(function() {
+                    confetti.start()
+                }, 100); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+            };
+
+            const stop = () => {
+                setTimeout(function() {
+                    confetti.stop()
+                }, 10000);
+            };
+
+            start();
+            stop();
+    </script>
+
+
+</body>
+</html>
+
