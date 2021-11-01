@@ -1,0 +1,48 @@
+package service;
+
+import java.util.ArrayList;
+import java.sql.*;
+
+public class ConnectToDatabase {
+    public static ArrayList<String> displayPosts(String image) {
+       String hostname = "hna.database.windows.net";
+       String dbName = "BumperStickers";
+       String user = "hna-admin";
+       //String password = "";
+       String url = String.format("jdbc:sqlserver://%s:1433;database=%s;user=%s;password=%s;encrypt=true;" + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;", hostname, dbName, user, password);
+
+      Connection connection;
+
+        try{
+            connection = DriverManager.getConnection(url);
+
+            String query = "SELECT * FROM Posts WHERE Image = 'image'; ";//SQL SELECT query that filters all throughout table only from teachername
+            Statement st = connection.createStatement();//create the java statement
+
+            ResultSet resultSet = st.executeQuery(query);//execute the query and get a java resultset
+
+            while (resultSet.next()) {
+                String Image = resultSet.getString("Image");//might need to capatalize if doesn't work
+                BumperStickerPost.setImage(Image);
+                String lat = resultSet.getString("lat");
+                BumperStickerPost.setLat(title);
+                String lon = resultSet.getString("long");
+                BumperStickerPost.setLon(department);
+
+
+                teacherInfo.add(newTeacherInfo);
+                //printing out the results
+                System.out.format(newTeacherInfo.getTeacherName(), newTeacherInfo.getTitle(), newTeacherInfo.getDepartment(), newTeacherInfo.getEducation(), newTeacherInfo.getEmail());
+            }
+
+            connection.close();
+
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+}
