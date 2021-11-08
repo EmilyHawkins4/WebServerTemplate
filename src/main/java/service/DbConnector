@@ -16,18 +16,31 @@ public class ConnectToDatabase {
         try{
             connection = DriverManager.getConnection(url);
 
-            String query = "SELECT * FROM Posts WHERE Image = 'image'; ";//SQL SELECT query that filters all throughout table only from teachername
+            String query1 = "SELECT Image, lat, long FROM Posts;" ;
+            String query2 = "SELECT Tags.tagId, TaggedPosts.PostId, Tags.tagname" + "\n" +
+            "FROM TaggedPosts" + "\n" +
+            "INNER JOIN Tags ON TaggedPosts.tagId=Tags.tagId;";
+
             Statement st = connection.createStatement();//create the java statement
 
-            ResultSet resultSet = st.executeQuery(query);//execute the query and get a java resultset
+            ResultSet resultSet1 = st.executeQuery(query1);//execute the query and get a java resultset
+            ResultSet resultSet2 = st.executeQuery(query2);
+
+
 
             while (resultSet.next()) {
-                String Image = resultSet.getString("Image");//might need to capatalize if doesn't work
-                BumperStickerPost.setImage(Image);
-                String lat = resultSet.getString("lat");
-                BumperStickerPost.setLat(title);
-                String lon = resultSet.getString("long");
-                BumperStickerPost.setLon(department);
+                String Image = resultSet1.getString("Image");//might need to capatalize if doesn't work
+
+                double lat = resultSet1.getDouble("lat");
+
+                double lon = resultSet1.getDouble("long");
+
+                while() {
+
+                }
+                ArrayList<String> tagName = resultSet2.getArray("tagname");
+
+                BumperStickerPost sticker = new BumperStickerPost(Image, tagName, lat, lon);
 
 
                 teacherInfo.add(newTeacherInfo);

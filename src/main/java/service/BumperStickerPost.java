@@ -1,15 +1,16 @@
 package service;
+import java.util.ArrayList;
 
 public class BumperStickerPost {
     private String img;
-    private String tg;
+    private ArrayList<String> tg;
     private double lat;
     private double lon;
     //private int PostId;
     //private int TagId;
 
     //constructor
-    public BumperStickerPost(String image, String tag, double latitude, double longitude){
+    public BumperStickerPost(String image, ArrayList<String> tag, double latitude, double longitude){
         img = image;
         tg = tag;
         lat = latitude;
@@ -21,7 +22,7 @@ public class BumperStickerPost {
         return img;
     }
 
-    public String getTag (){
+    public ArrayList<String> getTag (){
         return tg;
     }
 
@@ -38,7 +39,7 @@ public class BumperStickerPost {
        img = newImage;
     }
 
-    public void setTag (String newTag){
+    public void setTag (ArrayList<String> newTag){
         tg = newTag;
     }
 
