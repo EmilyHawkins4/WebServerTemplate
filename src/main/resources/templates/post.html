@@ -35,30 +35,30 @@
 
 <!--posting form-->
 <div id="htmlForm">
-<form onsubmit="return submitForm()" th:action="@{/submit}">
+<form action = "#" th:action="@{/submit}" th:object="${post}" method="post">
 
     <!--input name-->
     <div class = "inputfield">
         <label class="inputLabel" >Name</label>
-        <input type="text" id="name" placeholder="enter name"  required><!--th:field="*{name}"-->
+        <input type="text" id="name" placeholder="enter name" th:field="*{name}" required/>
     </div>
 
     <!--input tags-->
     <div class = "inputfield">
         <label class="inputLabel">Tags</label>
-        <input type="text" id="tags" placeholder="#enter #tags"  required/><!--th:field="*{tags}"-->
+        <input type="text" id="tags" placeholder="#enter #tags" th:field="*{tags}" required/>
     </div>
 
     <!--input title -->
     <div class = "inputfield">
         <label class="inputLabel">Title</label>
-        <input type="text" id="title" placeholder="enter title"  required/><!--th:field="*{title}"-->
+        <input type="text" id="title" placeholder="enter title" th:field="*{title}"/>
     </div>
 
     <!--input image-->
     <div class = "inputfield">
         <label class="inputLabel">Image</label>
-        <input class = "button" type="file" id="img" name="img" accept="image/*"  required/><!--th:field="*{image}"-->
+        <input class = "button" type="file" id="img" name="img" accept="image/*" th:field="*{image}"/>
     </div>
 
     <!--select location-->
