@@ -24,6 +24,14 @@ public class MainController {
 		return "content";
 	}
 
+	@GetMapping("/fyp")
+	public String fyp() {
+
+		ConnectToDatabase.displayPosts();
+		return "fyp";
+
+	}
+
 	@GetMapping("/post")
 	public String post() { return "post"; }
 
