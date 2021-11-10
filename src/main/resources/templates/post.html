@@ -20,7 +20,7 @@
     <!--pretty font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
 </head>
 
@@ -29,36 +29,45 @@
 <!--page heading-->
 <div id="pageHeading">
     <h1 class="heading">BUMPER STICKERS</h1>
-    <button class="button"><a href="/">Back to home!</a></button>
+    <button class="button-small"><a href="/">Back to home!</a></button>
 </div>
 
 
 <!--posting form-->
 <div id="htmlForm">
-<form onsubmit="return submitForm()">
+<form onsubmit="return submitForm()" th:action="@{/submit}">
 
     <!--input name-->
-    <label class="inputLabel">Name</label>
-    <input type="text" id="name" placeholder="enter your name">
+    <div class = "inputfield">
+        <label class="inputLabel" >Name</label>
+        <input type="text" id="name" placeholder="enter name"  required><!--th:field="*{name}"-->
+    </div>
 
     <!--input tags-->
-    <label class="inputLabel">Tags</label>
-    <input type="text" id="tags" placeholder="enter tags">
+    <div class = "inputfield">
+        <label class="inputLabel">Tags</label>
+        <input type="text" id="tags" placeholder="#enter #tags"  required/><!--th:field="*{tags}"-->
+    </div>
 
-    <!--input caption-->
-    <label class="inputLabel">Caption</label>
-    <input type="text" id="caption" placeholder="enter your caption">
+    <!--input title -->
+    <div class = "inputfield">
+        <label class="inputLabel">Title</label>
+        <input type="text" id="title" placeholder="enter title"  required/><!--th:field="*{title}"-->
+    </div>
 
     <!--input image-->
-    <label class="inputLabel">Image</label>
-    <input class = "button" type="file" id="img" name="img" accept="image/*">
+    <div class = "inputfield">
+        <label class="inputLabel">Image</label>
+        <input class = "button" type="file" id="img" name="img" accept="image/*"  required/><!--th:field="*{image}"-->
+    </div>
 
     <!--select location-->
-    <label class="inputLabel">Location</label>
-    <div class="container">
+    <div class = "inputfield">
+        <label class="inputLabel">Location</label>
+        <div class="container">
 
         <!--button to trigger modal-->
-        <button class="button-small" type="button" data-toggle="modal" data-target="#myModal">Select Position</button>
+        <button class="button" type="button" data-toggle="modal" data-target="#myModal">Select Position</button>
 
         <!--when the button created above is clicked this modal opens-->
         <div class="modal fade" id="myModal" role="dialog">
@@ -90,34 +99,17 @@
         </div>
 
     </div>
+    </div>
 
     <!--submit button-->
-    <input type="submit" value="submit" onclick="confetti()">
-    <script src="./confetti.js"></script>
-    <script>
-        function confetti(){
-            const start = () => {
-                setTimeout(function(){
-                    confetti.start();
-                },1000)
-            };
+    <input type="submit" value="submit" onclick="submitForm()"/>
 
-            const stop = () => {
-                setTimeout(function(){
-                    confetti.stop();
-                }, 5000)
-            };
-        start();
-        stop();
-        submitForm();
-    }
-    </script>
 
 </form>
 </div>
 </div>
 <script
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly"
+        src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap&v=weekly"
         async
 ></script>
 </body>

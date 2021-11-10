@@ -1,32 +1,49 @@
 /* styling the body */
 #everything{
-    background-color: yellow;
+    background-color: #ffc6b8;
     font-family: 'Montserrat', sans-serif;
 }
 
 /* styling the heading */
 #pageHeading{
     text-align: center;
-    background-color: pink;
+    background-color: #ffc6b8;
     padding: 5px;
+    color: #ff7d5c
 }
-.button {
+
+/* styling one type of button */
+.button-small {
     font-size:20px;
-    text-decoration: none;
+    border-radius: 6px;
     background-color: white;
-    border-style: none;
-    padding: 5px 10px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    margin: 2px 5px;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    border-radius: 6px;
 }
-.button-small {
+
+/* styling inout field */
+.inputfield {
+    padding: 30px;
+}
+
+/* styling links */
+a{
+    text-decoration: none;
+    color: yellow;
+}
+
+/* styling one type of button */
+.button {
     font-size:15px;
     text-decoration: none;
-    background-color: white;
+    background-color: rgb(10);
     border-style: none;
     padding: 5px 7px;
     text-align: center;
@@ -35,6 +52,8 @@
     cursor: pointer;
     border-radius: 6px;
 }
+
+/* styling the labels */
 .inputLabel{
     font-size: 30px;
 }
@@ -58,7 +77,7 @@ input[type=text], select {
 /* styling submit button */
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #304169;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -69,7 +88,7 @@ input[type=submit] {
 
 /* styling submit button on hover */
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: #222d47;
 }
 
 /* map styling */
@@ -90,6 +109,6 @@ body {
 #htmlForm {
     width:700px;
     margin: auto;
-    background-color: orange;
+    background-color: white;
     padding: 30px;
 }

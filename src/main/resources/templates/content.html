@@ -17,7 +17,7 @@
     <!--pretty font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
 </head>
 
@@ -36,7 +36,33 @@
         </div>
 
         <!--js will find this div and put the cards here-->
-        <div id="content"></div>
+        <div class="container">
+            <div class="row">
+            <div class="col-sm card-deck"> <!--th:each-->
+                <div class="card">
+                    <img class="card-img-top" src="https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg" alt="Card image cap" width="18rem">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">#tags</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Posted by: User</small>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">#tags</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Posted by: User</small>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
 
     </div>
 
@@ -44,7 +70,7 @@
     <!-- execute initMap function in js-->
     <!--need to add api key here-->
     <script
-            src="https://maps.googleapis.com/maps/api/js?key=APIKEYHERE&callback=initMap&v=weekly"
+            src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap&v=weekly"
             async
     ></script>
 
