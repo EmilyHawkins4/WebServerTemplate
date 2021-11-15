@@ -8,7 +8,7 @@ public class ConnectToDatabase {
         String hostname = "hna.database.windows.net";
         String dbName = "BumperStickers";
         String user = "hna-admin";
-        //String password = "";
+        String password = "";
         String url = String.format("jdbc:sqlserver://%s:1433;database=%s;user=%s;password=%s;encrypt=true;" + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;", hostname, dbName, user, password);
 
         Connection connection;
