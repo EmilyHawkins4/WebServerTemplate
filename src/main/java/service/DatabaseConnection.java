@@ -6,10 +6,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class DatabaseConnection {
-/*
+public class databaseConnection {
+
     //save data from form to database
-    public void saveData(BumperSticker post) {
+    public void saveData(BumperStickerPost post) {
         String hostName = "hna.database.windows.net";
         String dbName = "BumperStickers";
         String user = "hna-admin";
@@ -33,8 +33,8 @@ public class DatabaseConnection {
             }
             String title = String.format("%s", post.getTitle());
             String tags = String.format("%s", post.getTags());
-            double lat = String.format("%f", post.getLat());
-            double lng = String.format("%f", post.getLng());
+            String lat = String.format("%f", post.getLat());
+            String lng = String.format("%f", post.getLong());
             String query = "INSERT INTO post_database(name, image, title, tags, lat, lng) VALUES ('" + name + "','" + image + "','" + title + "','" + tags + "','" + lat + "','" + lng + "')";
             Statement st = connection.createStatement();
             st.execute(query);
@@ -42,7 +42,7 @@ public class DatabaseConnection {
             System.err.println("Got an error! ");
             System.err.println(e.getMessage());
         }
-    }*/
+    }
 
 
 }
