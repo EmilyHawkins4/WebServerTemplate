@@ -1,22 +1,22 @@
 package service;
+import java.util.ArrayList;
 public class BumperStickerPost {
-    private String name;
+    //private String name;
     private String image;
-    private String tags;
-    private double lat;
-    private double lon;
+    private ArrayList<String> tags;
+    private double latitude;
+    private double longitude;
     private String title;
     //private int PostId;
     //private int TagId;
     //constructor
-    /*public BumperStickerPost(String img, String tag, String titl, String nm){
+    public BumperStickerPost(String img, ArrayList<String> tag, String titl, double lat, double lon){
         image = img;
         tags = tag;
-        //lat = latitude;
-        //lon = longitude;
-        title = titl;
-        name = nm;
-    }*/
+        latitude = lat;
+        longitude = lon;
+        title = title;
+    }
 
     //get methods
     public String getImage (){
@@ -28,43 +28,43 @@ public class BumperStickerPost {
     }
 
     public double getLat (){
-        return lat;
+        return latitude;
     }
 
     public double getLong (){
-        return lon;
+        return longitude;
     }
 
     public String getTitle(){
         return title;
     }
 
-    public String getName() {
+    /*public String getName() {
         return name;
-    }
+    }*/
 
     //set methods
     public void setImage(String newImage){
         image = newImage;
     }
 
-    public void setTags (String newTag){
+    public void setTags (ArrayList<String> newTag){
         tags = newTag;
     }
 
     public void setLat (double newLat){
-        lat = newLat;
+        latitude = newLat;
     }
 
     public void setLon (double newLon){
-        lon = newLon;
+        longitude = newLon;
     }
 
     public void setTitle(String newTitle){
         title = newTitle;
     }
 
-    public void setName(String newName) {
+   /* public void setName(String newName) {
         name = newName;
-    }
+    }*/
 }
