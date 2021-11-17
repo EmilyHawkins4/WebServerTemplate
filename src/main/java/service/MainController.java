@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+
 @Controller
 public class MainController {
 	@GetMapping("/")
@@ -25,6 +26,14 @@ public class MainController {
 	@GetMapping("/content")
 	public String content() {
 		return "content";
+	}
+
+	@GetMapping("/fyp")
+	public String fyp() {
+
+		ConnectToDatabase.displayPosts();
+		return "fyp";
+
 	}
 
 	@GetMapping("/post")
