@@ -23,7 +23,7 @@ public class BumperStickerPost {
         return image;
     }
 
-    public String getTags (){
+    public ArrayList<String> getTags (){
         return tags;
     }
 

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class databaseConnection {
 
     //save data from form to database
-    public void saveData(BumperStickerPost post) {
+   public void saveData(BumperStickerPost post) {
         String hostName = "hna.database.windows.net";
         String dbName = "BumperStickers";
         String user = "hna-admin";
