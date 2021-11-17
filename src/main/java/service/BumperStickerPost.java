@@ -15,7 +15,7 @@ public class BumperStickerPost {
         tags = tag;
         latitude = lat;
         longitude = lon;
-        title = title;
+        title = titl;
     }
 
     //get methods
