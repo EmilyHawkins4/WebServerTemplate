@@ -2,11 +2,11 @@ package service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
-public class DatabaseConnection {
+public class DatabaseConnect {
 
         //save data from form to database
         public void saveData(BumperStickerPost post) {
@@ -44,6 +44,4 @@ public class DatabaseConnection {
             }
         }
 
-
-    }
 }
