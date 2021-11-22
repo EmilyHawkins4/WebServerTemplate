@@ -19,11 +19,11 @@ public class DatabaseConnect {
             Connection connection = null;
             try {
                 connection = DriverManager.getConnection(url);
-                String name;
-                if (post.getName() == null) {
-                    name = null;
+                String username;
+                if (post.getUsername() == null) {
+                    username = null;
                 } else {
-                    name = String.format("%s", post.getName());
+                    username = String.format("%s", post.getUsername());
                 }
                 String image;
                 if (post.getImage() == null) {
@@ -35,7 +35,7 @@ public class DatabaseConnect {
                 String tags = String.format("%s", post.getTags());
                 String lat = String.format("%f", post.getLat());
                 String lng = String.format("%f", post.getLong());
-                String query = "INSERT INTO post_database(name, image, title, tags, lat, lng) VALUES ('" + name + "','" + image + "','" + title + "','" + tags + "','" + lat + "','" + lng + "')";
+                String query = "INSERT INTO post_database(username, image, title, tags, lat, lng) VALUES ('" + username + "','" + image + "','" + title + "','" + tags + "','" + lat + "','" + lng + "')";
                 Statement st = connection.createStatement();
                 st.execute(query);
             } catch (Exception e) {

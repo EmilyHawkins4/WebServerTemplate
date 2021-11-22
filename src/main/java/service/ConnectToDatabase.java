@@ -36,7 +36,7 @@ public class ConnectToDatabase {
 
                 String title = resultSet1.getString("title");
 
-                String name = resultSet1.getString("username");
+                String username = resultSet1.getString("username");
 
                /* while(true) {
 
@@ -45,11 +45,11 @@ public class ConnectToDatabase {
 
                 ArrayList<String> tagName = new ArrayList<String>();
 
-                BumperStickerPost sticker = new BumperStickerPost(Image, tagName, title, lat, lon, name);
+                BumperStickerPost sticker = new BumperStickerPost(Image, tagName, title, lat, lon, username);
 
 
                 //printing out the results
-                System.out.format(sticker.getImage(), sticker.getTags(), sticker.getLat(), sticker.getLong());
+                System.out.format(sticker.getImage(), sticker.getTags(), sticker.getTitle(), sticker.getLat(), sticker.getLong(), sticker.getUsername());
             }
 
             connection.close();
