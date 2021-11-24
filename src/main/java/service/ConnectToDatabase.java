@@ -25,7 +25,7 @@ public class ConnectToDatabase {
 
             ResultSet resultSet1 = st.executeQuery(query1);//execute the query and get a java resultset
 
-
+            ArrayList<BumperStickerPost> PostList = new ArrayList<>();
 
             while (resultSet1.next()) {
                 String Image = resultSet1.getString("Image");//might need to capatalize if doesn't work
@@ -41,13 +41,13 @@ public class ConnectToDatabase {
                 }*/
                 //ArrayList<String> tagName = resultSet2.getArray("tagname");
 
-                ArrayList<String> tagName = new ArrayList<String>();
 
-                BumperStickerPost sticker = new BumperStickerPost(Image, tagName, title, lat, lon);
 
+                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, name);
+                PostList.add(sticker);
 
                 //printing out the results
-                System.out.println(sticker.getImage()+ " "+sticker.getTags()+ " "+sticker.getLat()+" "+ sticker.getLong());
+                //System.out.println(sticker.getImage()+ " "+sticker.getTags()+ " "+sticker.getLat()+" "+ sticker.getLong());
             }
 
             connection.close();
