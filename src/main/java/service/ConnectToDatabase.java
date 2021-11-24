@@ -17,14 +17,14 @@ public class ConnectToDatabase {
             connection = DriverManager.getConnection(url);
 
             String query1 = "SELECT Image, lat, long, title, username FROM Posts;";
-            /*String query2 = "SELECT Tags.tagId, TaggedPosts.PostId, Tags.tagname" + "\n" +
+            String query2 = "SELECT Tags.tagId, TaggedPosts.PostId, Tags.tagname" + "\n" +
                     "FROM TaggedPosts" + "\n" +
-                    "INNER JOIN Tags ON TaggedPosts.tagId=Tags.tagId;";*/
+                    "INNER JOIN Tags ON TaggedPosts.tagId=Tags.tagId;";
 
             Statement st = connection.createStatement();//create the java statement
 
             ResultSet resultSet1 = st.executeQuery(query1);//execute the query and get a java resultset
-            //ResultSet resultSet2 = st.executeQuery(query2);
+
 
 
             while (resultSet1.next()) {
