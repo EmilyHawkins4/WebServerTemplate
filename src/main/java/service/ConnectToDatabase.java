@@ -38,19 +38,20 @@ public class ConnectToDatabase {
 
                 String username = resultSet1.getString("username");
 
-               /* while(true) {
-
-                }*/
-                //ArrayList<String> tagName = resultSet2.getArray("tagname");
-
-                ArrayList<String> tagName = new ArrayList<String>();
-
                 BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, username);
 
 
                 //printing out the results
                 System.out.println(sticker.getImage()+ " "+sticker.getTags()+ " "+sticker.getLat()+" "+ sticker.getLong());
             }
+
+            resultSet1 = st.executeQuery(query2);
+
+            while(resultSet1.next()) {
+                ArrayList<String> tagName;
+                }
+
+
 
             connection.close();
 
