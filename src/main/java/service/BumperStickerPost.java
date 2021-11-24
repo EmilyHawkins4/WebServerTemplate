@@ -17,6 +17,15 @@ public class BumperStickerPost {
 
     }
 
+
+    public BumperStickerPost(String img, String titl, double lat, double lon, String nam){
+        image = img;
+        latitude = lat;
+        longitude = lon;
+        title = titl;
+        username = nam;
+    }
+
     public BumperStickerPost(String img, ArrayList<String> tag, String titl, double lat, double lon, String nam){
         image = img;
         tags = tag;
