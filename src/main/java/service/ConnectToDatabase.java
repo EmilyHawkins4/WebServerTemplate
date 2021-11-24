@@ -16,7 +16,7 @@ public class ConnectToDatabase {
         try {
             connection = DriverManager.getConnection(url);
 
-            String query1 = "SELECT Image, lat, long, title FROM Posts;";
+            String query1 = "SELECT Image, lat, long, title, username FROM Posts;";
             String query2 = "SELECT Tags.tagId, TaggedPosts.PostId, Tags.tagname" + "\n" +
                     "FROM TaggedPosts" + "\n" +
                     "INNER JOIN Tags ON TaggedPosts.tagId=Tags.tagId;";
@@ -36,11 +36,9 @@ public class ConnectToDatabase {
 
                 String title = resultSet1.getString("title");
 
-               /* while(true) {
+                String username = resultSet1.getString("username");
 
-                }*/
-                //ArrayList<String> tagName = resultSet2.getArray("tagname");
-
+                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, username);
 
 
                 BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, name);
@@ -49,6 +47,14 @@ public class ConnectToDatabase {
                 //printing out the results
                 //System.out.println(sticker.getImage()+ " "+sticker.getTags()+ " "+sticker.getLat()+" "+ sticker.getLong());
             }
+
+            resultSet1 = st.executeQuery(query2);
+
+            while(resultSet1.next()) {
+                ArrayList<String> tagName;
+                }
+
+
 
             connection.close();
 
