@@ -40,8 +40,6 @@ public class ConnectToDatabase {
 
                 BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, username);
 
-
-                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, name);
                 PostList.add(sticker);
 
                 //printing out the results
