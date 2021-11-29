@@ -16,7 +16,7 @@ public class ConnectToDatabase {
         try {
             connection = DriverManager.getConnection(url);
 
-            String query1 = "SELECT Image, lat, long, title, username FROM Posts;";
+            String query1 = "SELECT Id, Image, lat, long, title, username FROM Posts;";
             String query2 = "SELECT Tags.tagId, TaggedPosts.PostId, Tags.tagname" + "\n" +
                     "FROM TaggedPosts" + "\n" +
                     "INNER JOIN Tags ON TaggedPosts.tagId=Tags.tagId;";
@@ -28,6 +28,8 @@ public class ConnectToDatabase {
             ArrayList<BumperStickerPost> PostList = new ArrayList<>();
 
             while (resultSet1.next()) {
+                int PostId = resultSet1.getInt("Id");
+
                 String Image = resultSet1.getString("Image");//might need to capatalize if doesn't work
 
                 double lat = resultSet1.getDouble("lat");
@@ -38,7 +40,7 @@ public class ConnectToDatabase {
 
                 String username = resultSet1.getString("username");
 
-                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, username);
+                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, username, PostId);
 
                 PostList.add(sticker);
 
@@ -48,8 +50,19 @@ public class ConnectToDatabase {
 
             resultSet1 = st.executeQuery(query2);
 
-            while(resultSet1.next()) {
-                ArrayList<String> tagName;
+            for(int i=0; i< PostList.size(); i++) {
+                BumperStickerPost object = PostList.get(i);
+                int Id = object.getPostId();
+
+                ArrayList<String> tagList = null;
+                resultSet1 = st.executeQuery(query2);
+                while(resultSet1.next()){
+                    if(resultSet1.getInt("TaggedPosts.PostId")== Id)
+                        tagList.add(resultSet1.getString("Tags.tagname"));
+
+                }
+                object.setTags(tagList);
+
                 }
 
 

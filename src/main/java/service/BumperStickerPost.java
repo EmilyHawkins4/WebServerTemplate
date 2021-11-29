@@ -9,7 +9,7 @@ public class BumperStickerPost {
     private String title;
     private String name;
     private String username;
-    //private int PostId;
+    private int postId;
     //private int TagId;
     //constructor
 
@@ -18,21 +18,23 @@ public class BumperStickerPost {
     }
 
 
-    public BumperStickerPost(String img, String titl, double lat, double lon, String nam){
+    public BumperStickerPost(String img, String titl, double lat, double lon, String nam, int Id){
         image = img;
         latitude = lat;
         longitude = lon;
         title = titl;
         username = nam;
+        postId = Id;
     }
 
-    public BumperStickerPost(String img, ArrayList<String> tag, String titl, double lat, double lon, String nam){
+    public BumperStickerPost(String img, ArrayList<String> tag, String titl, double lat, double lon, String nam, int Id){
         image = img;
         tags = tag;
         latitude = lat;
         longitude = lon;
         title = titl;
         username = nam;
+        postId = Id;
     }
 
     //get methods
@@ -60,6 +62,8 @@ public class BumperStickerPost {
         return username;
     }
 
+    public int getPostId(){return postId;}
+
     //set methods
     public void setImage(String newImage){
         image = newImage;
@@ -81,7 +85,9 @@ public class BumperStickerPost {
         title = newTitle;
     }
 
-   public void setUserame(String newUsername) {
+   public void setUsername(String newUsername) {
         username = newUsername;
     }
+
+    public void setPostId(int Id) { postId = Id;}
 }
