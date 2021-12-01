@@ -33,7 +33,7 @@ public class MainController {
 	@GetMapping("/fyp")
 	public String fyp() {
 
-		ConnectToDatabase.displayPosts();
+		System.out.println(ConnectToDatabase.displayPosts());
 		return "fyp";
 
 	}

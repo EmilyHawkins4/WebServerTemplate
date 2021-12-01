@@ -7,7 +7,6 @@ public class BumperStickerPost {
     private double latitude;
     private double longitude;
     private String title;
-    private String name;
     private String username;
     private int postId;
     //private int TagId;
@@ -90,4 +89,9 @@ public class BumperStickerPost {
     }
 
     public void setPostId(int Id) { postId = Id;}
+
+    public String toString(){
+        String str = username + " " + image + " " + title  + " " + tags.toString()  + " lat:" + latitude  + " long:" + longitude;
+        return str;
+    }
 }
