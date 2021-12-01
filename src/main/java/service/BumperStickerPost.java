@@ -72,7 +72,7 @@ public class BumperStickerPost {
         title = newTitle;
     }
 
-   public void setUserame(String newUsername) {
+   public void setUsername(String newUsername) {
         username = newUsername;
     }
 }
