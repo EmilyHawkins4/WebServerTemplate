@@ -45,6 +45,8 @@ public class MainController {
 	@PostMapping("/submit")
 	public String post(@ModelAttribute BumperStickerPost post, Model model){
 		model.addAttribute("post", post);
+		DatabaseConnect d = new DatabaseConnect();
+		d.saveData(post);
 		System.out.println(post);
 		return "submit";
 		}
