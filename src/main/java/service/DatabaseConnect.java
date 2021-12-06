@@ -32,11 +32,33 @@ public class DatabaseConnect {
                     image = String.format("%s", post.getImage());
                 }
                 String title = String.format("%s", post.getTitle());
-                String tags = String.format("%s", post.getTags());
+                //String tags = String.format("%s", post.getTags());
                 String lat = String.format("%f", post.getLat());
                 String lng = String.format("%f", post.getLong());
                 String query = "INSERT INTO Posts(username, Image, title, lat, long) VALUES ('" + username + "','" + image + "','" + title + "','" + lat + "','" + lng + "')";
                 // need to make tags query!!
+                Statement st = connection.createStatement();
+                st.execute(query);
+            } catch (Exception e) {
+                System.err.println("Got an error! ");
+                System.err.println(e.getMessage());
+            }
+            try {
+                connection = DriverManager.getConnection(url);
+                String tags = String.format("%s", post.getTags());
+                String query = "INSERT INTO Tags(tags) VALUES ('" + tags + "')";
+                Statement st = connection.createStatement();
+                st.execute(query);
+            } catch (Exception e) {
+                System.err.println("Got an error! ");
+                System.err.println(e.getMessage());
+            }
+            try {
+                connection = DriverManager.getConnection(url);
+                String tagID = String.format("%f", post.getLat());// TODO: need to call get tagID
+                String postID = String.format("%f", post.getLat());// TODO: need to call get postID
+
+                String query = "INSERT INTO TaggedPosts(tagId, PostId) VALUES ('" + tagID + "','" + postID + "')";
                 Statement st = connection.createStatement();
                 st.execute(query);
             } catch (Exception e) {
