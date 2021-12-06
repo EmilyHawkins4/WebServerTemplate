@@ -91,7 +91,7 @@ public class BumperStickerPost {
     public void setPostId(int Id) { postId = Id;}
 
     public String toString(){
-        String str = username + " " + image + " " + title  + " " + tags.toString()  + " lat:" + latitude  + " long:" + longitude;
+        String str = username + " " + image + " " + title  + " " + tags.toString()  + " lat:" + latitude  + " long:" + longitude +"\n";
         return str;
     }
 }
