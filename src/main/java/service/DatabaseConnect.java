@@ -35,7 +35,8 @@ public class DatabaseConnect {
                 String tags = String.format("%s", post.getTags());
                 String lat = String.format("%f", post.getLat());
                 String lng = String.format("%f", post.getLong());
-                String query = "INSERT INTO post_database(username, image, title, tags, lat, lng) VALUES ('" + username + "','" + image + "','" + title + "','" + tags + "','" + lat + "','" + lng + "')";
+                String query = "INSERT INTO Posts(username, Image, title, lat, long) VALUES ('" + username + "','" + image + "','" + title + "','" + lat + "','" + lng + "')";
+                // need to make tags query!!
                 Statement st = connection.createStatement();
                 st.execute(query);
             } catch (Exception e) {

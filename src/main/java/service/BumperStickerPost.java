@@ -7,7 +7,7 @@ public class BumperStickerPost {
     private double latitude;
     private double longitude;
     private String title;
-    private String name;
+    //private String name;
     private String username;
     //private int PostId;
     //private int TagId;
