@@ -31,8 +31,8 @@ public class MainController {
 	}
 
 	@GetMapping("/fyp")
-	public String fyp() {
-
+	public String fyp(Model model) {
+		model.addAttribute("posts", ConnectToDatabase.displayPosts());
 		System.out.println(ConnectToDatabase.displayPosts());
 		return "fyp";
 
