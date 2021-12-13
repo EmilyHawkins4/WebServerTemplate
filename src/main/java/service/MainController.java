@@ -26,7 +26,8 @@ public class MainController {
 	}
 
 	@GetMapping("/content")
-	public String content() {
+	public String content(Model model) {
+		model.addAttribute("posts", ConnectToDatabase.displayPosts());
 		return "content";
 	}
 
