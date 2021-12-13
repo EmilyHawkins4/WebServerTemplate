@@ -5,11 +5,15 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.*;
 
 public class DatabaseConnect {
 
         //save data from form to database
         public void saveData(BumperStickerPost post) {
+            int postIdInt = -1;
+            int tagIdInt = -1;
+
             String hostName = "hna.database.windows.net";
             String dbName = "BumperStickers";
             String user = "hna-admin";
@@ -36,9 +40,12 @@ public class DatabaseConnect {
                 String lat = String.format("%f", post.getLat());
                 String lng = String.format("%f", post.getLong());
                 String query = "INSERT INTO Posts(username, Image, title, lat, long) VALUES ('" + username + "','" + image + "','" + title + "','" + lat + "','" + lng + "')";
-                // need to make tags query!!
                 Statement st = connection.createStatement();
-                st.execute(query);
+                st.execute(query, Statement.RETURN_GENERATED_KEYS);
+                ResultSet postID = st.getGeneratedKeys();
+                postID.first();
+                postIdInt = postID.getInt("Id");
+                System.out.println(postIdInt);
             } catch (Exception e) {
                 System.err.println("Got an error! ");
                 System.err.println(e.getMessage());
@@ -46,19 +53,21 @@ public class DatabaseConnect {
             try {
                 connection = DriverManager.getConnection(url);
                 String tags = String.format("%s", post.getTags());
-                String query = "INSERT INTO Tags(tags) VALUES ('" + tags + "')";
+                String query = "INSERT INTO Tags(tagname) VALUES ('" + tags + "')";
                 Statement st = connection.createStatement();
-                st.execute(query);
+                st.execute(query, Statement.RETURN_GENERATED_KEYS);
+                ResultSet tagID = st.getGeneratedKeys();
+                tagID.first();
+                tagIdInt = tagID.getInt("tagId");
+                System.out.println(tagID);
             } catch (Exception e) {
                 System.err.println("Got an error! ");
                 System.err.println(e.getMessage());
             }
             try {
                 connection = DriverManager.getConnection(url);
-                String tagID = String.format("%f", post.getLat());// TODO: need to call get tagID
-                String postID = String.format("%f", post.getLat());// TODO: need to call get postID
 
-                String query = "INSERT INTO TaggedPosts(tagId, PostId) VALUES ('" + tagID + "','" + postID + "')";
+                String query = "INSERT INTO TaggedPosts(tagId, PostId) VALUES ('" + tagIdInt + "','" + postIdInt + "')";
                 Statement st = connection.createStatement();
                 st.execute(query);
             } catch (Exception e) {
