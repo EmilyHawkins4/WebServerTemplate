@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
+import java.util.ArrayList;
+
 
 @Controller
 public class MainController {
@@ -24,14 +26,15 @@ public class MainController {
 	}
 
 	@GetMapping("/content")
-	public String content() {
+	public String content(Model model) {
+		model.addAttribute("posts", ConnectToDatabase.displayPosts());
 		return "content";
 	}
 
 	@GetMapping("/fyp")
-	public String fyp() {
-
-		ConnectToDatabase.displayPosts();
+	public String fyp(Model model) {
+		model.addAttribute("posts", ConnectToDatabase.displayPosts());
+		System.out.println(ConnectToDatabase.displayPosts());
 		return "fyp";
 
 	}
