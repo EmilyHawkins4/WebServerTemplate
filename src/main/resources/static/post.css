@@ -28,6 +28,10 @@
     cursor: pointer;
 }
 
+.home-button:hover {
+    background-color: #ededed;
+}
+
 /* styling inout field */
 .inputfield {
     padding: 30px;
@@ -82,7 +86,7 @@ input[type=submit] {
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
-  border-radius: 4px;
+  border-radius: 7px;
   cursor: pointer;
 }
 

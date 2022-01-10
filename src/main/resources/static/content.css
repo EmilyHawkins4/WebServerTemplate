@@ -74,3 +74,11 @@ body {
     cursor: pointer;
     cursor: pointer;
 }
+.home-button:hover {
+    background-color: #ededed;
+}
+
+#space{
+    padding: 20px;
+    background-color: #ffc6b8;
+}
