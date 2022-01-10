@@ -13,7 +13,7 @@
 }
 
 /* styling one type of button */
-.button-small {
+.home-button {
     font-size:20px;
     border-radius: 6px;
     background-color: white;
@@ -111,4 +111,22 @@ body {
     margin: auto;
     background-color: white;
     padding: 30px;
+    border-radius: 25px;
+}
+
+input[type="file"] {
+    font-size:15px;
+    text-decoration: none;
+    background-color: rgb(10);
+    border-style: none;
+    padding: 5px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 6px;
+}
+#space{
+    padding: 50px;
+    background-color: #ffc6b8;
 }

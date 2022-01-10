@@ -7,6 +7,7 @@
     <!--page setup-->
     <title>Post</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8">
 
     <!-- connecting to js and css-->
     <link rel="stylesheet" th:href="@{/post.css}"/>
@@ -29,7 +30,7 @@
 <!--page heading-->
 <div id="pageHeading">
     <h1 class="heading">BUMPER STICKERS</h1>
-    <button class="button-small"><a href="/">Back to home!</a></button>
+    <button class="home-button"><a href="/">Back to home!</a></button>
 </div>
 
 
@@ -52,13 +53,13 @@
     <!--input title -->
     <div class = "inputfield">
         <label class="inputLabel">Title</label>
-        <input type="text" id="title" placeholder="enter title" th:field="*{title}"/>
+        <input type="text" id="title" placeholder="enter title" th:field="*{title}" required/>
     </div>
 
     <!--input image-->
     <div class = "inputfield">
-        <label class="inputLabel">Image</label>
-        <input class = "button" type="file" id="img" name="img" accept="image/*" th:field="*{image}"/>
+        <label for="file-upload" class="inputLabel">Image</label>
+        <input class = "button" type="file" id="file-upload" name="img" accept="image/*" th:field="*{image}" required/>
     </div>
 
     <!--TODO: Make Map Show in Modal-->
@@ -108,7 +109,9 @@
 
 </form>
 </div>
+    <div id="space"></div>
 </div>
+
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCM6FbjGbaG76uCGhZXlMVbwC5zdZr-Sw&callback=initMap&v=weekly"
         async
