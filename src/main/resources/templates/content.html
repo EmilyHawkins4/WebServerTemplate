@@ -37,18 +37,24 @@
 
         <div class="container">
             <div class="row">
-            <div class="col-sm card-deck"> <!--th:each-->
+            <div class="col-sm card-deck" th:each = "BumperStickerPost:${posts}">
                 <div class="card">
-                    <img class="card-img-top" src="https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg" alt="Card image cap" width="18rem">
+                    <img class="card-img-top" th:src="${BumperStickerPost.image}" alt="Card image cap" width="18rem">
                     <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text">#tags</p>
+                        <h5 class="card-title" th:text = "${BumperStickerPost.title}"></h5>
+                        <div th:each = "tag: ${BumperStickerPost.tags}">
+                            # <span class="card-text" th:text = "${tag}"></span>
+                        </div>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Posted by: User</small>
+                        <small class="text-muted">
+                            Posted by:
+                            <span th:text = "${BumperStickerPost.username}"></span>
+                        </small>
+
                     </div>
                 </div>
-                <div class="card">
+                <!--<div class="card">
                     <img class="card-img-top" src="https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Title</h5>
@@ -56,7 +62,7 @@
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Posted by: User</small>
-                    </div>
+                    </div>-->
                 </div>
 
             </div>
