@@ -11,8 +11,8 @@ public class DatabaseConnect {
 
         //save data from form to database
         public void saveData(BumperStickerPost post) {
-            int postIdInt = -1;
-            int tagIdInt = -1;
+            String postId = "";
+            String tagId = "";
 
             String hostName = "hna.database.windows.net";
             String dbName = "BumperStickers";
@@ -42,10 +42,10 @@ public class DatabaseConnect {
                 String query = "INSERT INTO Posts(username, Image, title, lat, long) VALUES ('" + username + "','" + image + "','" + title + "','" + lat + "','" + lng + "')";
                 Statement st = connection.createStatement();
                 st.execute(query, Statement.RETURN_GENERATED_KEYS);
-                ResultSet postID = st.getGeneratedKeys();
-                postID.first();
-                postIdInt = postID.getInt("Id");
-                System.out.println(postIdInt);
+                ResultSet postIDs = st.getGeneratedKeys();
+                postIDs.next();
+                postId = postIDs.getString(1);
+                System.out.println("postID:" + postId);
             } catch (Exception e) {
                 System.err.println("Got an error! ");
                 System.err.println(e.getMessage());
@@ -56,10 +56,10 @@ public class DatabaseConnect {
                 String query = "INSERT INTO Tags(tagname) VALUES ('" + tags + "')";
                 Statement st = connection.createStatement();
                 st.execute(query, Statement.RETURN_GENERATED_KEYS);
-                ResultSet tagID = st.getGeneratedKeys();
-                tagID.first();
-                tagIdInt = tagID.getInt("tagId");
-                System.out.println(tagID);
+                ResultSet tagIDs = st.getGeneratedKeys();
+                tagIDs.next();
+                tagId = tagIDs.getString(1);
+                System.out.println("tagtID:" + tagId);
             } catch (Exception e) {
                 System.err.println("Got an error! ");
                 System.err.println(e.getMessage());
@@ -67,7 +67,7 @@ public class DatabaseConnect {
             try {
                 connection = DriverManager.getConnection(url);
 
-                String query = "INSERT INTO TaggedPosts(tagId, PostId) VALUES ('" + tagIdInt + "','" + postIdInt + "')";
+                String query = "INSERT INTO TaggedPosts(tagId, PostId) VALUES ('" + tagId + "','" + postId + "')";
                 Statement st = connection.createStatement();
                 st.execute(query);
             } catch (Exception e) {
