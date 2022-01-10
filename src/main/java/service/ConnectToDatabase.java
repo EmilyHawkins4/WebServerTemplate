@@ -69,10 +69,10 @@ public class ConnectToDatabase {
 
             connection.close();
 
-
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        return PostList;
     }
 }

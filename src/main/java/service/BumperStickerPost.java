@@ -16,9 +16,9 @@ public class BumperStickerPost {
 
     }
 
-    public BumperStickerPost(String img, ArrayList<String> tag, String titl, double lat, double lon, String nam, int Id){
+    public BumperStickerPost(String img, String titl, double lat, double lon, String nam, int Id){
         image = img;
-        tags = tag;
+        //tags = tag;
         latitude = lat;
         longitude = lon;
         title = titl;
