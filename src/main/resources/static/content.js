@@ -10,7 +10,20 @@ function initMap() {
     zoom: 12,
   });
 
-    var imgSrc = "https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg"
+ for(let i = 0; i < postList.size(), i++){
+    var Post = postList.get(i);
+    Post.get
+ }
+
+  const marker1 = new google.maps.Marker({
+    position: new google.maps.LatLng(47.6205, -122.3493),
+    map: map,
+  });
+
+
+
+
+ /*   var imgSrc = "https://kb.rspca.org.au/wp-content/uploads/2018/11/golder-retriever-puppy.jpeg"
     var tags = "#these #are #the #tags"
     var title = "Title!"
     var user = "Person"
@@ -44,6 +57,9 @@ function initMap() {
           shouldFocus: false,
         });
       });
+*/
+
+
 
 /*
    // this div holds the cards on the map page
