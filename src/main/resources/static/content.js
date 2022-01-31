@@ -3,23 +3,33 @@ let map;
 
 // this function is called in the html every time the page loads
 function initMap() {
-
+    window.alert(11);
   // creating the google map
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 47.62607555, lng: -122.30418194524279 },
     zoom: 12,
   });
 
- for(let i = 0; i < postList.size(), i++){
-    var Post = postList.get(i);
-    Post.get
+var markers= [];
+markers.length = postList.length;
+
+ for(var i = 0; i < postList.length; i++){
+    var Post = postList[i];
+    var lat = Post.lat;
+    var long = Post.long;
+
+    markers[i] = new google.maps.Marker({
+        position: new google.maps.LatLng(lat, long),
+        map: map,
+    });
  }
 
-  const marker1 = new google.maps.Marker({
+ /* space needle sample marker
+ const marker1 = new google.maps.Marker({
     position: new google.maps.LatLng(47.6205, -122.3493),
     map: map,
   });
-
+*/
 
 
 
