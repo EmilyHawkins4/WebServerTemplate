@@ -2,7 +2,7 @@
 let map;
 
 // this function is called in the html every time the page loads
-
+function initMap() {
   // creating the google map
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 47.62607555, lng: -122.30418194524279 },
