@@ -34,18 +34,18 @@ public class ConnectToDatabase {
 
                 double lat = resultSet1.getDouble("lat");
 
-                double lon = resultSet1.getDouble("long");
+                double lng = resultSet1.getDouble("long");
 
                 String title = resultSet1.getString("title");
 
                 String username = resultSet1.getString("username");
 
-                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lon, username, PostId);
+                BumperStickerPost sticker = new BumperStickerPost(Image, title, Double.toString(lat), Double.toString(lng), username, PostId);
 
                 PostList.add(sticker);
 
                 //printing out the results
-                //System.out.println(sticker.getImage()+ " "+sticker.getTags()+ " "+sticker.getLat()+" "+ sticker.getLong());
+                //System.out.println(sticker.getImage()+ " "+sticker.getTags()+ " "+sticker.getLat()+" "+ sticker.getLng());
             }
 
             resultSet1 = st.executeQuery(query2);

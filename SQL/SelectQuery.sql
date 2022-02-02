@@ -1,4 +1,5 @@
-SELECT Image, lat, long FROM Posts;
+SELECT Image, lat,
+long FROM Posts;
 
 
 SELECT Tags.tagId, TaggedPosts.PostId, Tags.tagname
