@@ -25,11 +25,20 @@ markers.length = postList.length;
         position: new google.maps.LatLng(lat, long),
         map: map,
         });
+    console.log("hello");
+        //google.maps.event.addListener(markers[i], "click", function(){infowindow.open(map,markers[i]);});
+         var infowindow = new google.maps.InfoWindow({
+                       content:"<b>"+ title +"</b><br/> Posted by: " + user +"<br/> <img class = photo src="+ img +" width=200px >" });
 
-        infowindow = new google.maps.InfoWindow({
-                content:"<b>"+ title +"</b><br/> Posted by: " + user +"<br/> <img class = photo src="+ img +" width=200px >" }),
-                google.maps.event.addListener(markers[i], "click", function(){infowindow.open(map,markers[i]);});infowindow.open(map,markers[i]);
 
+          markers[i].addListener("click", () => {
+          console.log("hi");
+                   infowindow.open({
+                     anchor: markers[i],
+                     map,
+                     shouldFocus: false,
+                   });
+                   });
  }
 
  /* space needle sample marker
