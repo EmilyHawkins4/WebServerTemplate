@@ -13,6 +13,31 @@ function initMap() {
 var markers= [];
 markers.length = postList.length;
 
+//var Post = postList[0];
+//    var lat = Post.lat;
+//    var long = Post.long;
+//    var title = Post.title;
+//    var user = Post.username;
+//    var img = Post.image;
+//
+//    markers[0] = new google.maps.Marker({
+//        position: new google.maps.LatLng(lat, long),
+//        map: map,
+//        });
+//    console.log("hello");
+//        //google.maps.event.addListener(markers[i], "click", function(){infowindow.open(map,markers[i]);});
+//         var infowindow = new google.maps.InfoWindow({
+//                       content:"<b>"+ title +"</b><br/> Posted by: " + user +"<br/> <img class = photo src="+ img +" width=200px >" });
+//
+//
+//          markers[0].addListener("click", () => {
+//          console.log("hi");
+//                   infowindow.open({
+//                     anchor: markers[0],
+//                     map,
+//                     shouldFocus: false,
+//                   });
+//                   });
  for(var i = 0; i < postList.length; i++){
     var Post = postList[i];
     var lat = Post.lat;
@@ -27,16 +52,18 @@ markers.length = postList.length;
         });
     console.log("hello");
         //google.maps.event.addListener(markers[i], "click", function(){infowindow.open(map,markers[i]);});
-         var infowindow = new google.maps.InfoWindow({
+         markers[i].info = new google.maps.InfoWindow({
                        content:"<b>"+ title +"</b><br/> Posted by: " + user +"<br/> <img class = photo src="+ img +" width=200px >" });
 
-
+//            google.maps.event.addListener(markers[i], 'click', function() {
+//                markers[i].info.open(map, markers[i]);
+//                });
           markers[i].addListener("click", () => {
           console.log("hi");
-                   infowindow.open({
+                   markers[i].info.open({
                      anchor: markers[i],
-                     map,
-                     shouldFocus: false,
+                     map
+//                     shouldFocus: false,
                    });
                    });
  }
