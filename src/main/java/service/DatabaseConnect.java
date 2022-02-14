@@ -1,5 +1,10 @@
 package service;
 
+//import com.azure.storage.*;
+import com.azure.storage.blob.*;
+import com.azure.storage.blob.models.*;
+import java.io.*;
+import com.azure.core.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,9 +13,37 @@ import java.util.ArrayList;
 import java.sql.*;
 
 public class DatabaseConnect {
+    public static final String storageConnectionString =
+            "DefaultEndpointsProtocol=http;" +
+                    "AccountName=your_storage_account;" +
+                    "AccountKey=your_storage_account_key";
+
+        public String uploadImage(){
+            BlobServiceClient blobServiceClient = new BlobServiceClientBuilder()
+                    .endpoint("<your-storage-account-url>")
+                    .sasToken("<your-sasToken>")
+                    .buildClient();
+
+            BlobContainerClient blobContainerClient = blobServiceClient.getBlobContainerClient("mycontainer");
+
+            BlobClient blobClient = blobContainerClient.getBlobClient("myblob");
+
+            blobServiceClient.createBlobContainer("mycontainer");
+
+            BlobClient blobClientUpload = blobContainerClient.getBlobClient("myblob");
+            String dataSample = "samples";
+            blobClientUpload.upload(BinaryData.fromString(dataSample));
+
+            try {
+                return blobClient.downloadContent();
+            } catch {
+                return null;
+            }
+        }
 
         //save data from form to database
         public void saveData(BumperStickerPost post) {
+
             String postId = "";
             String tagId = "";
 
