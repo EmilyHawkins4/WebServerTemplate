@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 
@@ -46,7 +47,7 @@ public class MainController {
 
 
 	@PostMapping("/submit")
-	public String post(@ModelAttribute BumperStickerPost post, Model model){
+	public String post(@ModelAttribute BumperStickerPost post, Model model, @RequestParam MultipartFile file){
 		System.out.println("lng: " + post.getLng());
 		System.out.println("lat: " + post.getLat());
 		model.addAttribute("post", post);

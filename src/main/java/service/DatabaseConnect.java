@@ -4,7 +4,7 @@ package service;
 import com.azure.storage.blob.*;
 import com.azure.storage.blob.models.*;
 import java.io.*;
-import com.azure.core.util;
+//import com.azure.core.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -34,11 +34,11 @@ public class DatabaseConnect {
             String dataSample = "samples";
             blobClientUpload.upload(BinaryData.fromString(dataSample));
 
-            try {
+            /*try {
                 return blobClient.downloadContent();
             } catch {
                 return null;
-            }
+            }*/
         }
 
         //save data from form to database
