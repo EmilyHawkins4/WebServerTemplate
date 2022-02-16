@@ -3,7 +3,7 @@ let map;
 
 // making the map
 function initMap() {
-    console.log("can u see this?");
+  console.log("can u see this?");
 
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: -34.397, lng: 150.644 },
@@ -11,11 +11,11 @@ function initMap() {
 
   });
 
-  }
+}
 
 
 // this function is executed when the user selects the submit button
-  function submitForm(){
-    window.location.href = "/submit";
-    console.log(name);
-  }
+function submitForm() {
+  window.location.href = "/submit";
+  console.log(name);
+}
