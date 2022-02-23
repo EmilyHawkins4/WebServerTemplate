@@ -47,6 +47,8 @@ public class MainController {
 
 	@PostMapping("/submit")
 	public String post(@ModelAttribute BumperStickerPost post, Model model){
+		System.out.println("lng: " + post.getLng());
+		System.out.println("lat: " + post.getLat());
 		model.addAttribute("post", post);
 		DatabaseConnect d = new DatabaseConnect();
 		d.saveData(post);

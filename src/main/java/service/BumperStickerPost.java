@@ -16,11 +16,11 @@ public class BumperStickerPost {
 
     }
 
-    public BumperStickerPost(String img, String titl, double lat, double lon, String nam, int Id){
+    public BumperStickerPost(String img, String titl, String lat, String lng, String nam, int Id){
         image = img;
         //tags = tag;
-        latitude = lat;
-        longitude = lon;
+        latitude = Double.parseDouble(lat);
+        longitude = Double.parseDouble(lng);;
         title = titl;
         username = nam;
         postId = Id;
@@ -36,10 +36,12 @@ public class BumperStickerPost {
     }
 
     public double getLat (){
+        System.out.println("getLat: " + latitude);
         return latitude;
     }
 
-    public double getLong (){
+    public double getLng (){
+        System.out.println("getLng: "+longitude);
         return longitude;
     }
 
@@ -66,8 +68,8 @@ public class BumperStickerPost {
         latitude = newLat;
     }
 
-    public void setLon (double newLon){
-        longitude = newLon;
+    public void setLng (double newLng){
+        longitude = newLng;
     }
 
     public void setTitle(String newTitle){

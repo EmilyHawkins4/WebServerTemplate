@@ -120,3 +120,7 @@ body {
     background-color: #ffc6b8;
     padding: 50px;
 }
+#map{
+    height: 300px;
+    width: 598px;
+}
