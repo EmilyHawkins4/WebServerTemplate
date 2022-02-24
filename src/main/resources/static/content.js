@@ -15,14 +15,14 @@ function initMap() {
 
   for (var i = 0; i < postList.length; i++) {
     var Post = postList[i];
-    var lat = Post.lat;
-    var long = Post.long;
+    var latitude = Post.lat;
+    var longitude = Post.lng;
     var title = Post.title;
     var user = Post.username;
     var img = Post.image;
 
     markers[i] = new google.maps.Marker({
-      position: new google.maps.LatLng(lat, long),
+      position: new google.maps.LatLng(latitude, longitude),
       map: map,
     });
     markers[i].info = new google.maps.InfoWindow({
