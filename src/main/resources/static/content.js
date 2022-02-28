@@ -4,10 +4,45 @@ let map;
 // this function is called in the html every time the page loads
 function initMap() {
 
+
+var maxLat = postList[0].lat;
+var maxLng = postList[0].lng;
+var minLat = postList[0].lat;
+var minLng = postList[0].lng;
+for(var i=0; i< postList.length; i++){
+    var Post = postList[i];
+    var latitude = Post.lat;
+    var longitude = Post.lng;
+
+    if(latitude>maxLat){
+        maxLat = latitude;}
+    if(latitude<minLat){
+        minLat = latitude;}
+
+    if(longitude>maxLat){
+            maxLng = longitude;}
+    if(longitude<minLat){
+            minLng = longitude;}
+
+
+}
+
+    console.log(maxLat);
+    console.log(minLat);
+    console.log(maxLng);
+    console.log(minLng);
   // creating the google map
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 47.62607555, lng: -122.30418194524279 },
+    center: { lat: (maxLat+minLat)/2, lng: (maxLng+minLng)/2 },
     zoom: 12,
+//    restriction: {
+//        latLngBounds: {
+//          north: maxLng + 2,
+//          south: minLng + 2,
+//          east: maxLat + 2,
+//          west: minLat + 2,
+//        },
+//      },
   });
 
   var markers = [];
