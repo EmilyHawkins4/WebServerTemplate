@@ -19,12 +19,21 @@ for(var i=0; i< postList.length; i++){
     if(latitude<minLat){
         minLat = latitude;}
 
-    if(longitude>maxLat){
+    if(longitude>maxLng){
             maxLng = longitude;}
-    if(longitude<minLat){
+    if(longitude<minLng){
             minLng = longitude;}
+}
 
-
+var zoomAmount;
+if (maxLat - minLat < 2 || maxLng - minLng < 2) {
+    zoomAmount = 8;
+}
+else if (maxLat - minLat < 20 || maxLng - minLng < 20) {
+    zoomAmount = 5;
+}
+else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
+    zoomAmount = 2;
 }
 
     console.log(maxLat);
@@ -34,15 +43,7 @@ for(var i=0; i< postList.length; i++){
   // creating the google map
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: (maxLat+minLat)/2, lng: (maxLng+minLng)/2 },
-    zoom: 12,
-//    restriction: {
-//        latLngBounds: {
-//          north: maxLng + 2,
-//          south: minLng + 2,
-//          east: maxLat + 2,
-//          west: minLat + 2,
-//        },
-//      },
+    zoom: zoomAmount,
   });
 
   var markers = [];
