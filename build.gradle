@@ -24,6 +24,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'com.microsoft.sqlserver:mssql-jdbc'
 	implementation 'com.azure:azure-storage-blob:12.7.0'
+	implementation group: 'com.microsoft.azure', name: 'azure-storage', version: '8.0.0'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
