@@ -18,23 +18,15 @@ public class StorageService {
     public String StorageServices (MultipartFile file) throws IOException {
         try {
             String constr = System.getenv("storageExplorerConnectionString");
-            Map<String, String> env = System.getenv();
-            for (String envName : env.keySet()) {
-                if(envName == "storageExplorerConnectionString"){
-                    constr = env.get(envName);
-                }
-                System.out.format("%s=%s%n", envName, env.get(envName));
-            }
+            CloudStorageAccount storageAccount = CloudStorageAccount.parse(constr);
             System.out.println(constr);
 
-            BlobContainerClient container = new BlobContainerClientBuilder()
-                    .connectionString(constr)
-                    .containerName("upload")
-                    .buildClient();
+            CloudBlobClient blobClient = storageAccount.createCloudBlobClient();
 
-            BlobClient blob = container.getBlobClient(file.getOriginalFilename());
+            CloudBlobContainer container = blobClient.getContainerReference("bumperstickers");
 
-           // blob.upload(file.getInputStream(), file.getSize(), true);
+            CloudBlockBlob blob = container.getBlockBlobReference(file.getOriginalFilename());
+
             blob.upload(new BufferedInputStream(file.getInputStream()) , file.getInputStream().available());
             System.out.println("ok!");
 
