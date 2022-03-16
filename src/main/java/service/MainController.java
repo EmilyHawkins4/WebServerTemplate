@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.multipart.MultipartFile;
+import sun.jvm.hotspot.debugger.ProcessInfo;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -46,13 +49,18 @@ public class MainController {
 
 
 	@PostMapping("/submit")
-	public String post(@ModelAttribute BumperStickerPost post, Model model){
+	public String post(@ModelAttribute BumperStickerPost post, Model model, @RequestParam MultipartFile file){
 		System.out.println("lng: " + post.getLng());
 		System.out.println("lat: " + post.getLat());
+		StorageService f = new StorageService();
+		try {
+			f.StorageServices(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		model.addAttribute("post", post);
 		DatabaseConnect d = new DatabaseConnect();
 		d.saveData(post);
-		System.out.println(post);
 		return "submit";
 		}
 
