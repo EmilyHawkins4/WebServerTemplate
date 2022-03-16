@@ -4,8 +4,8 @@ public class BumperStickerPost {
     //private String name;
     private String image;
     private ArrayList<String> tags;
-    private double latitude;
-    private double longitude;
+    private Double latitude;
+    private Double longitude;
     private String title;
     private String username;
     private int postId;
@@ -16,11 +16,11 @@ public class BumperStickerPost {
 
     }
 
-    public BumperStickerPost(String img, String titl, String lat, String lng, String nam, int Id){
+    public BumperStickerPost(String img, String titl, Double lat, Double lng, String nam, int Id){
         image = img;
         //tags = tag;
-        latitude = Double.parseDouble(lat);
-        longitude = Double.parseDouble(lng);;
+        latitude = lat;
+        longitude = lng;;
         title = titl;
         username = nam;
         postId = Id;

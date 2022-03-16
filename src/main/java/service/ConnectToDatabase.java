@@ -32,15 +32,22 @@ public class ConnectToDatabase {
 
                 String Image = resultSet1.getString("Image");//might need to capatalize if doesn't work
 
-                double lat = resultSet1.getDouble("lat");
-
-                double lng = resultSet1.getDouble("long");
+                Double lat = resultSet1.getDouble("lat");
+                //Double lat = resultSet1.getBigDecimal("lat").doubleValue();
+                if (resultSet1.wasNull()){
+                    lat = null;
+                }
+                Double lng = resultSet1.getDouble("long");
+                //Double lng = resultSet1.getBigDecimal("long").doubleValue();
+                if (resultSet1.wasNull()){
+                    lng = null;
+                }
 
                 String title = resultSet1.getString("title");
 
                 String username = resultSet1.getString("username");
 
-                BumperStickerPost sticker = new BumperStickerPost(Image, title, Double.toString(lat), Double.toString(lng), username, PostId);
+                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lng, username, PostId);
 
                 PostList.add(sticker);
 
