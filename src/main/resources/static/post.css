@@ -9,7 +9,7 @@
     text-align: center;
     background-color: #ffc6b8;
     padding: 5px;
-    color: #ff7d5c
+    color: #ff7d5c;
 }
 
 /* styling one type of button */
@@ -27,8 +27,10 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+
 .button-small:hover {
-    background-color: #f2f2f2;
+    background-color: #ff7d5c;
+    color: white;
 }
 
 /* styling inout field */
@@ -38,8 +40,7 @@
 
 /* styling links */
 a{
-    text-decoration: none;
-    color: yellow;
+    color: black;
 }
 
 /* styling one type of button */
@@ -54,6 +55,12 @@ a{
     display: inline-block;
     cursor: pointer;
     border-radius: 6px;
+    margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #ff7d5c;
+  color: white;
 }
 
 /* styling the labels */
@@ -123,4 +130,34 @@ body {
 #map{
     height: 300px;
     width: 598px;
+}
+#img {
+     font-size:15px;
+        text-decoration: none;
+        background-color: rgb(10);
+        border-style: none;
+        padding: 5px 7px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 6px;
+}
+input[type=file]::file-selector-button {
+    font-size:15px;
+    text-decoration: none;
+    background-color: rgb(10);
+    border-style: none;
+    padding: 5px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+#homeButton {
+    color: black;
+    text-decoration: none;
 }

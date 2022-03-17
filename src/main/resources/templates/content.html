@@ -32,14 +32,16 @@
         <!--this div holds the page heading-->
         <div id="pageHeading">
             <h1>Bumper Stickers!</h1>
-            <button class="button-small"><a href="/">Back to Home!</a></button>
+            <button class="button-small" ><a href="/" id="homeButton">Back to Home!</a></button>
         </div>
 
         <div class="container">
             <div class="row">
             <div class="col-sm card-deck" th:each = "BumperStickerPost:${posts}">
                 <div class="card">
-                    <img class="card-img-top" th:src="${BumperStickerPost.image}" alt="Card image cap" width="18rem">
+                    <div id="imgDiv">
+                        <img class="card-img-top" th:src="${BumperStickerPost.image}" alt="Card image cap" width="18rem">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title" th:text = "${BumperStickerPost.title}"></h5>
                         <div th:each = "tag: ${BumperStickerPost.tags}">
