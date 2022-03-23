@@ -35,12 +35,12 @@ public class BumperStickerPost {
         return tags;
     }
 
-    public double getLat (){
+    public Double getLat (){
         System.out.println("getLat: " + latitude);
         return latitude;
     }
 
-    public double getLng (){
+    public Double getLng (){
         System.out.println("getLng: "+longitude);
         return longitude;
     }
@@ -64,11 +64,11 @@ public class BumperStickerPost {
         tags = newTag;
     }
 
-    public void setLat (double newLat){
+    public void setLat (Double newLat){
         latitude = newLat;
     }
 
-    public void setLng (double newLng){
+    public void setLng (Double newLng){
         longitude = newLng;
     }
 

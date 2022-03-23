@@ -51,6 +51,8 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
 
   for (var i = 0; i < postList.length; i++) {
     var Post = postList[i];
+    if (Post.lat == null || Post.lng == null){
+        continue;}
     var latitude = Post.lat;
     var longitude = Post.lng;
     var title = Post.title;
