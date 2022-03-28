@@ -17,7 +17,7 @@ public class BumperStickerPost {
     }
 
     public BumperStickerPost(String img, String titl, String lat, String lng, String nam, int Id){
-        image = "https://holynamesacademy.blob.core.windows.net/bumperstickers/" +img;
+        image = img;
         //tags = tag;
         latitude = Double.parseDouble(lat);
         longitude = Double.parseDouble(lng);;

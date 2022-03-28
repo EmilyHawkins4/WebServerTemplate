@@ -57,6 +57,7 @@ public class MainController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		post.setImage(file.getOriginalFilename());
 		model.addAttribute("post", post);
 		DatabaseConnect d = new DatabaseConnect();
 		d.saveData(post);
