@@ -37,9 +37,22 @@ public class DatabaseConnect {
                 }
                 String title = String.format("%s", post.getTitle());
                 //String tags = String.format("%s", post.getTags());
-                String lat = String.format("%f", post.getLat());
-                String lng = String.format("%f", post.getLng());
-                String query = "INSERT INTO Posts(username, Image, title, lat, long) VALUES ('" + username + "','" + image + "','" + title + "','" + lat + "','" + lng + "')";
+                String lat;
+                if (post.getLat() == null){
+                    lat = null;
+                } else {
+                    lat = String.format("%f", post.getLat());
+                }
+
+                String lng;
+                if (post.getLng() == null){
+                    lng = null;
+                } else {
+                    lng = String.format("%f", post.getLng());
+                }
+                //String lat = String.format("%f", post.getLat());
+                //String lng = String.format("%f", post.getLng());
+                String query = "INSERT INTO Posts(username, Image, title, lat, long) VALUES ('" + username + "','" + image + "','" + title + "'," + lat + "," + lng + ")";
                 Statement st = connection.createStatement();
                 st.execute(query, Statement.RETURN_GENERATED_KEYS);
                 ResultSet postIDs = st.getGeneratedKeys();
