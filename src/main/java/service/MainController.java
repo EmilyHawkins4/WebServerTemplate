@@ -52,12 +52,14 @@ public class MainController {
 		System.out.println("lng: " + post.getLng());
 		System.out.println("lat: " + post.getLat());
 		StorageService f = new StorageService();
+		String url;
 		try {
-			f.StorageServices(file);
+			url = f.StorageServices(file);
 		} catch (IOException e) {
 			e.printStackTrace();
+			url="it didn't work";
 		}
-		post.setImage(file.getOriginalFilename());
+		post.setImage(url);
 		model.addAttribute("post", post);
 		DatabaseConnect d = new DatabaseConnect();
 		d.saveData(post);
