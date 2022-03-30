@@ -15,3 +15,17 @@ lat DECIMAL(8,6) NOT NULL,
 long DECIMAL(9,6) NOT NULL,
 
 PRIMARY KEY (Id))
+
+
+//new database code
+CREATE TABLE Posts2
+
+(Id int NOT NULL IDENTITY(1,1),
+
+Image VARCHAR(300) NOT NULL,
+
+lat DECIMAL(8,6),
+
+long DECIMAL(9,6),
+
+PRIMARY KEY (Id))
