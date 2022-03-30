@@ -75,3 +75,17 @@ body {
     background-color: #ffc6b8;
     padding: 20px;
 }
+#imgDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#homeButton {
+    color: black;
+    text-decoration: none;
+}
+
+.button-small:hover {
+    background-color: #ff7d5c;
+}

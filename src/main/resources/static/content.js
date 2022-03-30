@@ -36,10 +36,6 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
     zoomAmount = 2;
 }
 
-    console.log(maxLat);
-    console.log(minLat);
-    console.log(maxLng);
-    console.log(minLng);
   // creating the google map
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: (maxLat+minLat)/2, lng: (maxLng+minLng)/2 },

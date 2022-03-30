@@ -29,13 +29,13 @@
 <!--page heading-->
 <div id="pageHeading">
     <h1 class="heading">BUMPER STICKERS</h1>
-    <button class="button-small"><a href="/">Back to home!</a></button>
+    <button class="button-small"><a href="/" id="homeButton">Back to home!</a></button>
 </div>
 
 
 <!--posting form-->
 <div id="htmlForm">
-<form action = "#" th:action="@{/submit}" th:object="${post}" method="post">
+<form action = "#" th:action="@{/submit}" th:object="${post}" method="post" enctype="multipart/form-data">
 
     <!--input name-->
     <div class = "inputfield">
@@ -58,11 +58,8 @@
     <!--input image-->
     <div class = "inputfield">
         <label class="inputLabel">Image</label>
-        <input class = "button" type="file" id="img" name="img" accept="image/*" th:field="*{image}"/>
+        <input class = "button" type="file" id="img" name="file" accept="image/*" />
     </div>
-
-    <input id="lat" th:field="*{lat}">
-    <input id="lng" th:field="*{lng}">
 
     <!--TODO: Make Map Show in Modal-->
     <!--select location-->
@@ -102,6 +99,9 @@
 
             </div>
         </div>
+
+            <input id="lat" th:field="*{lat}" readonly>
+            <input id="lng" th:field="*{lng}" readonly>
 
     </div>
     </div>

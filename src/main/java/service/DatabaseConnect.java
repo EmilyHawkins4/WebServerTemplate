@@ -29,12 +29,12 @@ public class DatabaseConnect {
                 } else {
                     username = String.format("%s", post.getUsername());
                 }
-                String image;
-                if (post.getImage() == null) {
+                String image = post.getImage();
+                /*if (post.getImage() == null) {
                     image = "final bb logo (white).png";
                 } else {
                     image = String.format("%s", post.getImage());
-                }
+                }*/
                 String title = String.format("%s", post.getTitle());
                 //String tags = String.format("%s", post.getTags());
                 String lat;
