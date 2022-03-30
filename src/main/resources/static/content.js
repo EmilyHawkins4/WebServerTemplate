@@ -5,40 +5,48 @@ let map;
 function initMap() {
 
 
-var maxLat = postList[0].lat;
-var maxLng = postList[0].lng;
-var minLat = postList[0].lat;
-var minLng = postList[0].lng;
-for(var i=0; i< postList.length; i++){
+  var maxLat = postList[0].lat;
+  var maxLng = postList[0].lng;
+  var minLat = postList[0].lat;
+  var minLng = postList[0].lng;
+  for (var i = 0; i < postList.length; i++) {
     var Post = postList[i];
     var latitude = Post.lat;
     var longitude = Post.lng;
 
-    if(latitude>maxLat){
-        maxLat = latitude;}
-    if(latitude<minLat){
-        minLat = latitude;}
+    if (latitude == null || longitude == null) {
+      continue;
+    }
 
-    if(longitude>maxLng){
-            maxLng = longitude;}
-    if(longitude<minLng){
-            minLng = longitude;}
-}
+    if (latitude > maxLat) {
+      maxLat = latitude;
+    }
+    if (latitude < minLat) {
+      minLat = latitude;
+    }
 
-var zoomAmount;
-if (maxLat - minLat < 2 || maxLng - minLng < 2) {
+    if (longitude > maxLng) {
+      maxLng = longitude;
+    }
+    if (longitude < minLng) {
+      minLng = longitude;
+    }
+  }
+
+  var zoomAmount;
+  if (maxLat - minLat < 2 || maxLng - minLng < 2) {
     zoomAmount = 8;
-}
-else if (maxLat - minLat < 20 || maxLng - minLng < 20) {
+  }
+  else if (maxLat - minLat < 20 || maxLng - minLng < 20) {
     zoomAmount = 5;
-}
-else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
+  }
+  else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
     zoomAmount = 2;
-}
+  }
 
   // creating the google map
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: (maxLat+minLat)/2, lng: (maxLng+minLng)/2 },
+    center: { lat: (maxLat + minLat) / 2, lng: (maxLng + minLng) / 2 },
     zoom: zoomAmount,
   });
 
@@ -47,8 +55,9 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
 
   for (var i = 0; i < postList.length; i++) {
     var Post = postList[i];
-    if (Post.lat == null || Post.lng == null){
-        continue;}
+    if (Post.lat == null || Post.lng == null) {
+      continue;
+    }
     var latitude = Post.lat;
     var longitude = Post.lng;
     var title = Post.title;
@@ -68,5 +77,8 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
     });
 
   }
+    //create and pass in function after 'click'
+    var search = document.getElementById("searchButton")
+    search.addEventListener('click',)
 
 }
