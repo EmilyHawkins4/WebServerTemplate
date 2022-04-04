@@ -79,6 +79,18 @@ function initMap() {
   }
     //create and pass in function after 'click'
     var search = document.getElementById("searchButton")
-    search.addEventListener('click',)
+    search.addEventListener('click', )
 
+}
+
+function searchByTag() {
+    for (var i = 0; i < postList.length; i++){
+        var Post = postList[i];
+        var Tag = Post.tags;
+        for (var j = 0; j < tags.length; j++){
+            if(!tags[j].equals(document.getElementById("searchButton").value)){
+                document.getElementById("#div-id-" + (i+1)).display = "none";
+            }
+        }
+    }
 }
