@@ -30,14 +30,11 @@ public class StorageService {
             blob.upload(new BufferedInputStream(file.getInputStream()) , file.getInputStream().available());
             System.out.println("ok!");
 
-            return blob.getUri().toString();
-
         }
         catch (Exception e){
             System.err.println("Got an error!");
             System.err.println(e.getMessage());
         }
         return "ok";
-
     }
 }

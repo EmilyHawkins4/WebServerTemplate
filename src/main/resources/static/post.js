@@ -41,5 +41,13 @@ function initMap() {
         document.getElementById("lat").setAttribute("field", marker.getPosition().lat());
         document.getElementById("lng").setAttribute("field", marker.getPosition().lng());
 
-  });
+    });
+
+
   }
+
+function checkImage(){
+  if(document.getElementById('img').files[0].size > 1048576){
+        alert("Your file is too large! Please select a different file. ")
+    }
+}
