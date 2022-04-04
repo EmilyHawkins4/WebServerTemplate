@@ -9,7 +9,7 @@ function initMap() {
 
     function loadImage(){
         if(document.getElementById('img').files[0].size > 1048576){
-            alert("Your file is too large!Please select a different file!")
+            alert("Your file is too large! Please select a different file!")
             document.getElementById("img").value = null;
         }
         console.log("loaded!")
