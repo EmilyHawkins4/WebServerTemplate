@@ -4,16 +4,17 @@ let map;
 // making the map
 function initMap() {
 
-var photo = document.getElementById('img');
-photo.addEventListener('input', loadImage, false);
+    var photo = document.getElementById('img');
+    photo.addEventListener('input',loadImage,false);
 
-function loadImage(){
-    if(document.getElementById('img').files[0].size > 1048576){
-            alert("Your file is too large! Please select a different file. ")
+    function loadImage(){
+        if(document.getElementById('img').files[0].size > 1048576){
+            alert("Your file is too large! Please select a different file!")
             document.getElementById("img").value = null;
         }
-    console.log("loaded!")
-}
+        console.log("loaded!")
+    }
+
     console.log("can u see this?");
     const myLatlng = { lat: 47.62607555, lng: -122.30418194524279 }
   map = new google.maps.Map(document.getElementById("map"), {
@@ -52,9 +53,5 @@ function loadImage(){
         document.getElementById("lat").setAttribute("field", marker.getPosition().lat());
         document.getElementById("lng").setAttribute("field", marker.getPosition().lng());
 
-    });
-
-
+  });
   }
-
-
