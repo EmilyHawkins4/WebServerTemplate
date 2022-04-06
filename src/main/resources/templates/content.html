@@ -51,7 +51,7 @@
                     <div class="card-footer">
                         <small class="text-muted">
                             Posted by:
-                            <span th:text = "${BumperStickerPost.username}"></span>
+                            <a th:href="@{/content?name={username}(username=${BumperStickerPost.username})}"><span th:text = "${BumperStickerPost.username}"></span></a>
                         </small>
 
                     </div>

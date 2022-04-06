@@ -28,17 +28,11 @@ public class MainController {
 	}
 
 	@GetMapping("/content")
-	public String content(Model model) {
-		model.addAttribute("posts", ConnectToDatabase.displayPosts());
+	public String content(@RequestParam(name="name", required=false) String name, Model model) {
+		model.addAttribute("posts", ConnectToDatabase.displayPosts(name));
+		System.out.println(name);
+		model.addAttribute("name", name);
 		return "content";
-	}
-
-	@GetMapping("/fyp")
-	public String fyp(Model model) {
-		model.addAttribute("posts", ConnectToDatabase.displayPosts());
-		System.out.println(ConnectToDatabase.displayPosts());
-		return "fyp";
-
 	}
 
 	@GetMapping("/post")

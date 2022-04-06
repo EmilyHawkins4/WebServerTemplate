@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.sql.*;
 
 public class ConnectToDatabase {
-    public static ArrayList<BumperStickerPost> displayPosts() {
+    public static ArrayList<BumperStickerPost> displayPosts(String name) {
         String hostname = "hna.database.windows.net";
         String dbName = "BumperStickers";
         String user = "hna-admin";
@@ -16,8 +16,13 @@ public class ConnectToDatabase {
 
         try {
             connection = DriverManager.getConnection(url);
-
-            String query1 = "SELECT Id, Image, lat, long, title, username FROM Posts;";
+            String query1;
+            if(name !=null){
+                query1 = "SELECT Id, Image, lat, long, title, username FROM Posts WHERE username= '"+name+"';";
+            }else {
+                query1 = "SELECT Id, Image, lat, long, title, username FROM Posts;";
+            }
+            System.out.println("Query1: "+ query1);
             String query2 = "SELECT Tags.tagId, TaggedPosts.PostId, Tags.tagname" + "\n" +
                     "FROM TaggedPosts" + "\n" +
                     "INNER JOIN Tags ON TaggedPosts.tagId=Tags.tagId;";
@@ -79,7 +84,7 @@ public class ConnectToDatabase {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        System.out.println("Postlist: "+ PostList);
         return PostList;
     }
 }
