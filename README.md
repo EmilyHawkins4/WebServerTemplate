@@ -3,11 +3,11 @@
 ## Contributors
 
 This Project was created by Seniors from Holy Names Academy’s Class of 2022
--[Emily Hawkins](github.com/emilyhawkins4)
--[Kayla Mattson](github.com/kayla-mattson)
--[Sage Stefonic](github.com/sagestefonic)
--[Gisela Roberts](github.com/giselagroberts)
--[Dylan Clausen](github.com/dclauson22)
+- [Emily Hawkins](github.com/emilyhawkins4)
+- [Kayla Mattson](github.com/kayla-mattson)
+- [Sage Stefonic](github.com/sagestefonic)
+- [Gisela Roberts](github.com/giselagroberts)
+- [Dylan Clausen](github.com/dclauson22)
 
 ## Purpose
 This Project was created for people around the world to connect by sharing bumper stickers
