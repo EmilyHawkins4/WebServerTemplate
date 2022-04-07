@@ -1,3 +1,18 @@
+# Project Details
+
+## Contributors
+
+This Project was created by Seniors from Holy Names Academy’s Class of 2022
+- [Emily Hawkins](github.com/emilyhawkins4)
+- [Kayla Mattson](github.com/kayla-mattson)
+- [Sage Stefonic](github.com/sagestefonic)
+- [Gisela Roberts](github.com/giselagroberts)
+- [Dylan Clausen](github.com/dclauson22)
+
+## Purpose
+This Project was created for people around the world to connect by sharing bumper stickers
+
+
 # Java Spring Web Server
 
 This is a Web Server application, modified from the Spring MVC serving web content tutorial repository (found [here](https://github.com/spring-guides/gs-serving-web-content)).

@@ -48,7 +48,7 @@
     <!--input tags-->
     <div class = "inputfield">
         <label class="inputLabel">Tags</label>
-        <input type="text" id="tags" placeholder="#enter #tags" th:field="*{tags}" required/>
+        <input type="text" id="tags" onclick="addFirstTag()" oninput="addMoreTags()" placeholder="#enter #tags" th:field="*{tags}" required/>
     </div>
 
     <!--input title -->

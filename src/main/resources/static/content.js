@@ -1,6 +1,31 @@
 // map setup
 let map;
 
+// this adds the name if it is a name search page
+var url = window.location.href;
+window.onload = function searchName(){
+    if(url.includes("?name=")){
+        var start = url.indexOf("=");
+        var username = url.substring(start+1, url.length);
+        console.log("username"+username);
+        document.getElementById("searchName").innerHTML = "<p>Posts by "+username+"</p>";
+        document.getElementById("optionalButton").innerHTML = "<button class='button-small'><a href='/content' id='homeButton'>Back to View!</a></button>";
+        //document.getElementById("container").style.marginTop=-5px;
+
+    }
+
+    // this displays the info window when a user clicks the card
+    $(document).ready(function(){
+              $(".checkClick").each(function(){
+                  $(this).on("click", function(){
+                    //alert("clicked!");
+                    // info = figure out corresponding info window
+                    // this.info.open(map, this);
+                  });
+              });
+         });
+}
+
 // this function is called in the html every time the page loads
 function initMap() {
 

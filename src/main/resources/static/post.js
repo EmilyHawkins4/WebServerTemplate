@@ -55,3 +55,13 @@ function initMap() {
 
   });
   }
+
+  function addFirstTag(){
+    document.getElementById("tags").value = "#"+document.getElementById("tags").value;
+  }
+  function addMoreTags(){
+    var value = document.getElementById("tags").value
+    if(value.slice(-1)==" "){
+        document.getElementById("tags").value = document.getElementById("tags").value + "#";
+    }
+  }

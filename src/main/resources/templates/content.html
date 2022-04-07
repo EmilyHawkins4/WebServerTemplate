@@ -8,6 +8,7 @@
     <!-- connecting to js and css-->
     <script type="text/javascript" th:src="@{/content.js}"></script>
     <link rel="stylesheet" th:href="@{/content.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     <!--page setup-->
@@ -32,20 +33,27 @@
         <!--this div holds the page heading-->
         <div id="pageHeading">
             <h1>Bumper Stickers!</h1>
-            <button class="button-small" ><a href="/" id="homeButton">Back to Home!</a></button>
+            <div id="buttons">
+                <button class="button-small" ><a href="/" id="homeButton">Back to Home!</a></button>
+                <div id="optionalButton"></div>
+            </div>
+
+            <div id="searchName"></div>
         </div>
 
-        <div class="container">
+        <div class="container" id="container">
             <div class="row">
             <div class="col-sm card-deck mt-4" th:each = "BumperStickerPost:${posts}">
                 <div class="card">
-                    <div id="imgDiv">
-                        <img class="card-img-top" th:src="${BumperStickerPost.image}" alt="Card image cap" height="200px"><!--width="18rem"-->
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" th:text = "${BumperStickerPost.title}"></h5>
-                        <div th:each = "tag: ${BumperStickerPost.tags}">
-                            # <span class="card-text" th:text = "${tag}"></span>
+                    <div class="checkClick">
+                        <div id="imgDiv">
+                            <img class="card-img-top" th:src="${BumperStickerPost.image}" alt="Card image cap" height="200px"><!--width="18rem"-->
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" th:text = "${BumperStickerPost.title}"></h5>
+                            <div th:each = "tag: ${BumperStickerPost.tags}">
+                                # <span class="card-text" th:text = "${tag}"></span>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">

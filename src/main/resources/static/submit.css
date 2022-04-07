@@ -2,14 +2,14 @@
 /* changing heading styling */
 h1{
     font-size: 130px;
-    color: #ff7d5c;
+    color: #719da6;
     text-align: center;
     font-weight: bold;
 }
 
 /* changing body styling */
 body {
-    background-color: #ffc6b8;
+    background-color: white;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
@@ -17,7 +17,7 @@ body {
 /* changing link styling */
 a{
     text-decoration: none;
-    color: #ffc6b8;
+    color: white;
 }
 
 /* changing link styling on hover */
@@ -28,7 +28,7 @@ a:hover{
 /* changing button styling on hover */
 .button:hover{
     font-size: 30px;
-     background-color: #ff7d5c;
+     background-color: #0d4570;
       border-style: none;
       padding: 15px 50px;
       text-align: center;
@@ -42,7 +42,7 @@ a:hover{
 /* changing button styling */
 .button{
     font-size: 30px;
-     background-color: white;
+     background-color: #316085;
       border-style: none;
       padding: 15px 50px;
       text-align: center;

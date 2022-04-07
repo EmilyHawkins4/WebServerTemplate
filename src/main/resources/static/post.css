@@ -1,15 +1,15 @@
 /* styling the body */
 #everything{
-    background-color: #ffc6b8;
+    background-color: #719da6;
     font-family: 'Montserrat', sans-serif;
 }
 
 /* styling the heading */
 #pageHeading{
     text-align: center;
-    background-color: #ffc6b8;
+    background-color: #719da6;
     padding: 5px;
-    color: #ff7d5c;
+    color: #316085;;
 }
 
 /* styling one type of button */
@@ -29,7 +29,7 @@
 }
 
 .button-small:hover {
-    background-color: #ff7d5c;
+    background-color: #316085;
     color: white;
 }
 
@@ -59,7 +59,7 @@ a{
 }
 
 .button:hover {
-  background-color: #ff7d5c;
+  background-color: #719da6;
   color: white;
 }
 
@@ -87,7 +87,7 @@ input[type=text], select {
 /* styling submit button */
 input[type=submit] {
   width: 100%;
-  background-color: #304169;
+  background-color: #316085;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -98,7 +98,7 @@ input[type=submit] {
 
 /* styling submit button on hover */
 input[type=submit]:hover {
-  background-color: #222d47;
+  background-color: #0d4570;
 }
 
 /* map styling */
@@ -124,7 +124,7 @@ body {
     border-radius: 25px;
 }
 #space {
-    background-color: #ffc6b8;
+    background-color: #719da6;
     padding: 50px;
 }
 #map{
