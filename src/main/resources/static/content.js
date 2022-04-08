@@ -88,8 +88,11 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
       content: "<b>" + title + "</b><br/> Posted by: " + user + "<br/> <img class = photo src=" + img + " width=200px >"
     });
 
+    lastWindow=null;
     google.maps.event.addListener(markers[i], 'click', function () {
-      this.info.open(map, this);
+        if (lastWindow) lastWindow.close();
+        this.info.open(map, this);
+        lastWindow= this.info;
     });
 
   }
