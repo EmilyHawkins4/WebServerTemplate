@@ -46,13 +46,15 @@
             <div class="col-sm card-deck mt-4" th:each = "BumperStickerPost:${posts}">
                 <div class="card">
                     <div class="checkClick">
+                        <div th:lat="${BumperStickerPost.lat}"></div>
+                        <div th:lng="${BumperStickerPost.lng}"></div>
                         <div id="imgDiv">
                             <img class="card-img-top" th:src="${BumperStickerPost.image}" alt="Card image cap" height="200px"><!--width="18rem"-->
                         </div>
                         <div class="card-body">
                             <h5 class="card-title" th:text = "${BumperStickerPost.title}"></h5>
                             <div th:each = "tag: ${BumperStickerPost.tags}">
-                                # <span class="card-text" th:text = "${tag}"></span>
+                                <span class="card-text" th:text = "${tag}"></span>
                             </div>
                         </div>
                     </div>

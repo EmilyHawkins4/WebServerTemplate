@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #719da6;
+  scroll-behavior: smooth;
 }
 
 /* photo formatting*/

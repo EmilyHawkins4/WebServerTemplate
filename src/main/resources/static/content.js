@@ -16,14 +16,16 @@ window.onload = function searchName(){
 
     // this displays the info window when a user clicks the card
     $(document).ready(function(){
-              $(".checkClick").each(function(){
-                  $(this).on("click", function(){
-                    //alert("clicked!");
-                    // info = figure out corresponding info window
-                    // this.info.open(map, this);
-                  });
-              });
-         });
+           $(".checkClick").each(function(){
+               $(this).on("click", function(){
+                   //alert("clicked! ");
+                   //console.log(this);
+                   //console.log("marker: "+markers[1]);
+                   // info = figure out corresponding info window
+                   // this.info.open(map, this);
+               });
+           });
+    });
 }
 
 // this function is called in the html every time the page loads
@@ -92,9 +94,22 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
     google.maps.event.addListener(markers[i], 'click', function () {
         if (lastWindow) lastWindow.close();
         this.info.open(map, this);
+        console.log("lat: "+this.getPosition().lat());
+        console.log("lng: "+this.getPosition().lng());
+        var targetLat = '[lat=\"'+this.getPosition().lat()+'\"]'
+        console.log(targetLat);
+        console.log(document.querySelector(targetLat));
+        document.querySelector(targetLat).scrollIntoView({behavior: "smooth"});
         lastWindow= this.info;
     });
 
   }
+
+  //markers[2].info.open(map, markers[2]); <-- this opens the infowindow
+  /*var theString = markers[2].info.toString();
+  var index = theString.indexOf("<");
+  console.log("index: "+index)
+  var theTitle = theString.substring(2, 7);
+    console.log("marker: "+ theTitle);*/
 
 }
