@@ -7,10 +7,10 @@ window.onload = function searchName(){
     if(url.includes("?name=")){
         var start = url.indexOf("=");
         var username = url.substring(start+1, url.length);
-        console.log("username"+username);
-        document.getElementById("searchName").innerHTML = "<p>Posts by "+username+"</p>";
+        document.getElementById("searchName").innerHTML = "<h5 id='showPost'>Posts by "+username+"</h5>";
         document.getElementById("optionalButton").innerHTML = "<button class='button-small'><a href='/content' id='homeButton'>Back to View!</a></button>";
-        //document.getElementById("container").style.marginTop=-5px;
+        document.getElementById("pageHeading").style.paddingBottom = "0px";
+        document.getElementById("container").style.marginTop = "0px";
 
     }
 
@@ -18,8 +18,11 @@ window.onload = function searchName(){
     $(document).ready(function(){
            $(".checkClick").each(function(){
                $(this).on("click", function(){
-                   //alert("clicked! ");
-                   //console.log(this);
+//                   alert("clicked! ");
+//                   console.log(this);
+//                   var cardLat = this.getAttribute("lat");
+//                   var cardLng = this.getAttribute("lng");
+//                   console.log(cardLat +", "+cardLng)
                    //console.log("marker: "+markers[1]);
                    // info = figure out corresponding info window
                    // this.info.open(map, this);
@@ -94,11 +97,7 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
     google.maps.event.addListener(markers[i], 'click', function () {
         if (lastWindow) lastWindow.close();
         this.info.open(map, this);
-        console.log("lat: "+this.getPosition().lat());
-        console.log("lng: "+this.getPosition().lng());
         var targetLat = '[lat=\"'+this.getPosition().lat()+'\"]'
-        console.log(targetLat);
-        console.log(document.querySelector(targetLat));
         document.querySelector(targetLat).scrollIntoView({behavior: "smooth"});
         lastWindow= this.info;
     });

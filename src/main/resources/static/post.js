@@ -12,14 +12,12 @@ function initMap() {
             alert("Your file is too large! Please select a different file!")
             document.getElementById("img").value = null;
         }
-        console.log("loaded!")
     }
 
-    console.log("can u see this?");
     const myLatlng = { lat: 47.62607555, lng: -122.30418194524279 }
   map = new google.maps.Map(document.getElementById("map"), {
     center: myLatlng,
-    zoom: 8,
+    zoom: 5,
 
   });
 
@@ -45,8 +43,6 @@ function initMap() {
              map,
              title: "Sticker!",
           });
-
-        console.log(JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2));
 
         document.getElementById("lat").value = marker.getPosition().lat();
         document.getElementById("lng").value = marker.getPosition().lng();
