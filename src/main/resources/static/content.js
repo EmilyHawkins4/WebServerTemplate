@@ -26,11 +26,11 @@ window.onload = function searchName(){
                     var cardLng = this.getAttribute("lng");
                     for(var p=0; p<markers.length; p++){
                         if(markers[p].getPosition().lat()==cardLat && markers[p].getPosition().lng()==cardLng){
-                            if (lastWindow) lastWindow.close();
-                            markers[p].info.open(map, markers[p]);
-                            lastWindow= markers[p].info;
+                            if (lastWindow){lastWindow.close();}
+                                markers[p].info.open(map, markers[p]);
+                                lastWindow= markers[p].info;
                         }
-                    }
+                     }
                });
            });
     });
@@ -93,11 +93,11 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
       position: new google.maps.LatLng(latitude, longitude),
       map: map,
     });
-    markers[i].id = latitude+", "+longitude;//metadata = {theLat: latitude, theLng: longitude};
     markers[i].info = new google.maps.InfoWindow({
       content: "<b>" + title + "</b><br/> Posted by: " + user + "<br/> <img class = photo src=" + img + " width=200px >"
     });
 
+    lastWindow=null;
     google.maps.event.addListener(markers[i], 'click', function () {
         if (lastWindow) lastWindow.close();
         this.info.open(map, this);
@@ -107,3 +107,12 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
     });
 
   }
+
+  //markers[2].info.open(map, markers[2]); <-- this opens the infowindow
+  /*var theString = markers[2].info.toString();
+  var index = theString.indexOf("<");
+  console.log("index: "+index)
+  var theTitle = theString.substring(2, 7);
+    console.log("marker: "+ theTitle);*/
+
+}
