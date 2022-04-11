@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.*;
+import java.util.Arrays;
 
 public class DatabaseConnect {
 
@@ -65,7 +66,9 @@ public class DatabaseConnect {
             }
             try {
                 connection = DriverManager.getConnection(url);
-                String tags = String.format("%s", post.getTags());
+                //String theTags = .toString(.toArray()).replace("[", "").replace("]", "");
+                String theTags = Arrays.toString(post.getTags().toArray()).replace("[", "").replace("]", "");
+                String tags = String.format("%s", theTags);
                 String query = "INSERT INTO Tags(tagname) VALUES ('" + tags + "')";
                 Statement st = connection.createStatement();
                 st.execute(query, Statement.RETURN_GENERATED_KEYS);

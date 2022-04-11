@@ -61,3 +61,14 @@ function initMap() {
         document.getElementById("tags").value = document.getElementById("tags").value + "#";
     }
   }
+function checkTags(){
+    var userTags = document.getElementById("tags").value;
+    if(userTags.charAt(0) != "#"){
+        document.getElementById("tags").value = "#"+document.getElementById("tags").value;
+    }
+    for(i=0;i<userTags.length; i++){
+        if(userTags.charAt(i)==" "&&userTags.charAt(i+1) != "#"){
+            //need to make the string have a # after the space
+        }
+    }
+}
