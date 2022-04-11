@@ -1,6 +1,16 @@
 // map setup
 let map;
-
+window.onload = function searchName(){
+    document.getElementById("tags").addEventListener('keydown', function(event) {
+        const key = event.key;
+        if (key === "Backspace") {
+            var text = document.getElementById("tags").value;
+            if(text.charAt(text.length-1)=="#".charAt(0)){
+                document.getElementById("tags").value = text.slice(0, -1);
+            }
+        }
+    });
+}
 // making the map
 function initMap() {
 
@@ -53,7 +63,10 @@ function initMap() {
   }
 
   function addFirstTag(){
-    document.getElementById("tags").value = "#"+document.getElementById("tags").value;
+     var userTags = document.getElementById("tags").value;
+          if(userTags.charAt(0) != "#"){
+              document.getElementById("tags").value = "#"+document.getElementById("tags").value;
+          }
   }
   function addMoreTags(){
     var value = document.getElementById("tags").value
@@ -62,13 +75,8 @@ function initMap() {
     }
   }
 function checkTags(){
-    var userTags = document.getElementById("tags").value;
-    if(userTags.charAt(0) != "#"){
-        document.getElementById("tags").value = "#"+document.getElementById("tags").value;
-    }
-    for(i=0;i<userTags.length; i++){
-        if(userTags.charAt(i)==" "&&userTags.charAt(i+1) != "#"){
-            //need to make the string have a # after the space
+    var theTags = document.getElementById("tags").value;
+        if(theTags.charAt(0) != "#"){
+            document.getElementById("tags").value = "#"+document.getElementById("tags").value;
         }
-    }
 }
