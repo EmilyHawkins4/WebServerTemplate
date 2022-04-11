@@ -101,18 +101,11 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
     google.maps.event.addListener(markers[i], 'click', function () {
         if (lastWindow) lastWindow.close();
         this.info.open(map, this);
-        var targetLat = '[lat=\"'+this.getPosition().lat()+'\"]'
-        document.querySelector(targetLat).scrollIntoView({behavior: "smooth"});
+        var targetCoordinates = '[lat=\"'+this.getPosition().lat()+'\"], [lng=\"'+this.getPosition().lng()+'\"]'
+        document.querySelector(targetCoordinates).scrollIntoView({behavior: "smooth"});
         lastWindow= this.info;
     });
 
   }
-
-  //markers[2].info.open(map, markers[2]); <-- this opens the infowindow
-  /*var theString = markers[2].info.toString();
-  var index = theString.indexOf("<");
-  console.log("index: "+index)
-  var theTitle = theString.substring(2, 7);
-    console.log("marker: "+ theTitle);*/
 
 }
