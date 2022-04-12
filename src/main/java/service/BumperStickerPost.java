@@ -6,6 +6,7 @@ public class BumperStickerPost {
     private ArrayList<String> tags;
     private Double latitude;
     private Double longitude;
+    private String date;
     private String title;
     private String username;
     private int postId;
@@ -16,11 +17,12 @@ public class BumperStickerPost {
 
     }
 
-    public BumperStickerPost(String img, String titl, Double lat, Double lng, String nam, int Id){
+    public BumperStickerPost(String img, String titl, Double lat, Double lng, String theDate, String nam, int Id){
         image = img;
         //tags = tag;
         latitude = lat;
         longitude = lng;;
+        date = theDate;
         title = titl;
         username = nam;
         postId = Id;
@@ -43,6 +45,11 @@ public class BumperStickerPost {
     public Double getLng (){
         System.out.println("getLng: "+longitude);
         return longitude;
+    }
+
+    public String getDate (){
+        System.out.println("getDate: "+date);
+        return date;
     }
 
     public String getTitle(){
@@ -72,6 +79,10 @@ public class BumperStickerPost {
         longitude = newLng;
     }
 
+    public void setDate (String newDate){
+        date = newDate;
+    }
+
     public void setTitle(String newTitle){
         title = newTitle;
     }
@@ -83,7 +94,7 @@ public class BumperStickerPost {
     public void setPostId(int Id) { postId = Id;}
 
     public String toString(){
-        String str = username + " " + image + " " + title  + " " + tags.toString()  + " lat:" + latitude  + " long:" + longitude +"\n";
+        String str = username + " " + image + " " + title  + " " + tags.toString()  + " lat:" + latitude  + " long:" + longitude +  " " + date + "\n";
         return str;
     }
 }

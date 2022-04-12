@@ -61,6 +61,10 @@
                             Posted by:
                             <a th:href="@{/content?name={username}(username=${BumperStickerPost.username})}"><span th:text = "${BumperStickerPost.username}"></span></a>
                         </small>
+                        <small class="text-muted">
+                            Posted on:
+                            <span th:text = "${BumperStickerPost.date}"></span>
+                        </small>
 
                     </div>
                 </div>

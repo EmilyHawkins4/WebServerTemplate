@@ -45,6 +45,8 @@ public class MainController {
 	public String post(@ModelAttribute BumperStickerPost post, Model model, @RequestParam MultipartFile file){
 		System.out.println("lng: " + post.getLng());
 		System.out.println("lat: " + post.getLat());
+		System.out.println("------------------");
+		System.out.println("date: " + post.getDate());
 		StorageService f = new StorageService();
 		String url;
 		try {

@@ -51,9 +51,10 @@ public class DatabaseConnect {
                 } else {
                     lng = String.format("%f", post.getLng());
                 }
+                String date = String.format("%s", post.getDate());
                 //String lat = String.format("%f", post.getLat());
                 //String lng = String.format("%f", post.getLng());
-                String query = "INSERT INTO Posts(username, Image, title, lat, long) VALUES ('" + username + "','" + image + "','" + title + "'," + lat + "," + lng + ")";
+                String query = "INSERT INTO Posts(username, Image, title, lat, long, date) VALUES ('" + username + "','" + image + "','" + title + "'," + lat + "," + lng +  ",'" + date + "')";
                 Statement st = connection.createStatement();
                 st.execute(query, Statement.RETURN_GENERATED_KEYS);
                 ResultSet postIDs = st.getGeneratedKeys();
@@ -61,7 +62,7 @@ public class DatabaseConnect {
                 postId = postIDs.getString(1);
                 System.out.println("postID:" + postId);
             } catch (Exception e) {
-                System.err.println("Got an error! ");
+                System.err.println("Got an error in post query! ");
                 System.err.println(e.getMessage());
             }
             try {
@@ -77,7 +78,7 @@ public class DatabaseConnect {
                 tagId = tagIDs.getString(1);
                 System.out.println("tagtID:" + tagId);
             } catch (Exception e) {
-                System.err.println("Got an error! ");
+                System.err.println("Got an error in tags query! ");
                 System.err.println(e.getMessage());
             }
             try {
@@ -87,7 +88,7 @@ public class DatabaseConnect {
                 Statement st = connection.createStatement();
                 st.execute(query);
             } catch (Exception e) {
-                System.err.println("Got an error! ");
+                System.err.println("Got an error in tagged posts query! ");
                 System.err.println(e.getMessage());
             }
         }

@@ -18,9 +18,9 @@ public class ConnectToDatabase {
             connection = DriverManager.getConnection(url);
             String query1;
             if(name !=null){
-                query1 = "SELECT Id, Image, lat, long, title, username FROM Posts WHERE username= '"+name+"';";
+                query1 = "SELECT Id, Image, lat, long, title, username, date FROM Posts WHERE username= '"+name+"';";
             }else {
-                query1 = "SELECT Id, Image, lat, long, title, username FROM Posts;";
+                query1 = "SELECT Id, Image, lat, long, title, username, date FROM Posts;";
             }
             System.out.println("Query1: "+ query1);
             String query2 = "SELECT Tags.tagId, TaggedPosts.PostId, Tags.tagname" + "\n" +
@@ -52,7 +52,9 @@ public class ConnectToDatabase {
 
                 String username = resultSet1.getString("username");
 
-                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lng, username, PostId);
+                String date = resultSet1.getString("date");
+
+                BumperStickerPost sticker = new BumperStickerPost(Image, title, lat, lng, date, username, PostId);
 
                 PostList.add(sticker);
 

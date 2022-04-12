@@ -1,6 +1,16 @@
 // map setup
 let map;
+
+
+
 window.onload = function searchName(){
+
+const d = new Date();
+var date = d.getMonth()+"/"+d.getDate()+"/"+d.getFullYear();
+var theDate = date.toString();
+console.log("date: "+date);
+document.getElementById("date").setAttribute("field", theDate);
+
     document.getElementById("tags").addEventListener('keydown', function(event) {
         const key = event.key;
         if (key === "Backspace") {
@@ -63,6 +73,7 @@ function initMap() {
   }
 
   function addFirstTag(){
+    console.log("date getAttribute: "+document.getElementById("date").getAttribute("field"));
      var userTags = document.getElementById("tags").value;
           if(userTags.charAt(0) != "#"){
               document.getElementById("tags").value = "#"+document.getElementById("tags").value;
