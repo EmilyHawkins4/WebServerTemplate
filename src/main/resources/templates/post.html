@@ -54,7 +54,7 @@
     <!--input title -->
     <div class = "inputfield">
         <label class="inputLabel">Title</label>
-        <input type="text" id="title" placeholder="enter title" th:field="*{title}"/>
+        <input type="text" id="title" placeholder="enter title" th:field="*{title}" required/>
     </div>
 
     <!--input image-->
@@ -105,11 +105,18 @@
 
             <input id="lat" th:field="*{lat}" readonly>
             <input id="lng" th:field="*{lng}" readonly>
-            <input id="date" th:field="*{date}" type="hidden" readonly>
+
+
+
 
     </div>
     </div>
 
+    <!--input date -->
+    <div class = "inputfield">
+        <label class="inputLabel">Date</label>
+        <input type="text" id="date" th:field="*{date}" readonly>
+    </div>
 
     <!--submit button-->
     <input onclick="checkImage()" type="submit" value="submit"/>

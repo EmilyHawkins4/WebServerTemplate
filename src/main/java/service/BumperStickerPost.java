@@ -38,17 +38,14 @@ public class BumperStickerPost {
     }
 
     public Double getLat (){
-        System.out.println("getLat: " + latitude);
         return latitude;
     }
 
     public Double getLng (){
-        System.out.println("getLng: "+longitude);
         return longitude;
     }
 
     public String getDate (){
-        System.out.println("getDate: "+date);
         return date;
     }
 

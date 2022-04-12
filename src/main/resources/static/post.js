@@ -1,14 +1,12 @@
 // map setup
 let map;
 
-
-
 window.onload = function searchName(){
 
 const d = new Date();
-var date = d.getMonth()+"/"+d.getDate()+"/"+d.getFullYear();
+var date = (d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear();
 var theDate = date.toString();
-console.log("date: "+date);
+document.getElementById("date").value = theDate;
 document.getElementById("date").setAttribute("field", theDate);
 
     document.getElementById("tags").addEventListener('keydown', function(event) {
@@ -73,7 +71,6 @@ function initMap() {
   }
 
   function addFirstTag(){
-    console.log("date getAttribute: "+document.getElementById("date").getAttribute("field"));
      var userTags = document.getElementById("tags").value;
           if(userTags.charAt(0) != "#"){
               document.getElementById("tags").value = "#"+document.getElementById("tags").value;
