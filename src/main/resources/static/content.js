@@ -152,13 +152,14 @@ function search(){
     console.log("key word: "+keyWord)
     console.log(postList);
     for (var i = 0; i<postList.length; i++){
+        var j=i+1;
+        document.getElementById("card"+j).style.display = "block";
         var Post = postList[i];
         var Tag = Post.tags;
         console.log("does "+Tag+" have "+keyWord+"?:"+Tag.toString().includes(keyWord))
         if(Tag.toString().includes(keyWord) ==false){
             console.log("remove: "+Tag)
-            var j=i+1;
-            document.getElementById("card"+j).remove();
+            document.getElementById("card"+j).style.display ="none";
         }
     }
 }
