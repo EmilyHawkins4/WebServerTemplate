@@ -43,7 +43,7 @@
 
         <div class="container" id="container">
             <div class="row">
-            <div class="col-sm card-deck mt-4" th:each = "BumperStickerPost:${posts}">
+            <div class="col-sm card-deck mt-4" th:each = "BumperStickerPost:${posts}" th:id="@{|card${BumperStickerPostStat.count}|}">
                 <div class="card">
                     <div class="checkClick" th:lat="${BumperStickerPost.lat}" th:lng="${BumperStickerPost.lng}">
                         <div id="imgDiv">

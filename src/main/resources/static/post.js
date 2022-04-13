@@ -84,6 +84,7 @@ function initMap() {
   }
 function checkTags(){
     var theTags = document.getElementById("tags").value;
+    document.getElementById("tags").value = theTags.toLowerCase();
         if(theTags.charAt(0) != "#"){
             document.getElementById("tags").value = "#"+document.getElementById("tags").value;
         }

@@ -8,6 +8,9 @@ var lastWindow = null;
 // this adds the name if it is a name search page
 var url = window.location.href;
 window.onload = function searchName(){
+    if(url.indexOf("?")==-1){
+        document.getElementById("optionalButton").innerHTML = "<button class='button-small' onclick='makeSearch()' id='theSearchButton'>🔍</button>";
+    }
     if(url.includes("?name=")){
         var start = url.indexOf("=");
         var username = url.substring(start+1, url.length);
@@ -118,4 +121,48 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
 
   }
 
+}
+function makeSearch(){
+    document.getElementById("theSearchButton").remove();
+
+    var searchBar = document.createElement("input");
+    searchBar.id="searchBar";
+    searchBar.placeholder="Search tags";
+    document.getElementById("searchName").appendChild(searchBar);
+
+    var searchButton = document.createElement("button");
+    searchButton.innerHTML="search";
+    searchButton.id="searchButton";
+    searchButton.setAttribute("onclick","search()");
+    document.getElementById("searchName").appendChild(searchButton);
+
+    var cancelButton = document.createElement("button");
+        cancelButton.innerHTML="❌";
+        cancelButton.id="cancelButton";
+        cancelButton.id="cancelButton";
+        cancelButton.setAttribute("onclick","cancelSearch()");
+        document.getElementById("searchName").appendChild(cancelButton);
+
+    document.getElementById("pageHeading").style.paddingBottom = "0px";
+    document.getElementById("container").style.marginTop = "0px";
+}
+
+function search(){
+    var keyWord = document.getElementById("searchBar").value;
+    console.log("key word: "+keyWord)
+    console.log(postList);
+    for (var i = 0; i<postList.length; i++){
+        var Post = postList[i];
+        var Tag = Post.tags;
+        console.log("does "+Tag+" have "+keyWord+"?:"+Tag.toString().includes(keyWord))
+        if(Tag.toString().includes(keyWord) ==false){
+            console.log("remove: "+Tag)
+            var j=i+1;
+            document.getElementById("card"+j).remove();
+        }
+    }
+}
+
+function cancelSearch(){
+    location.reload();
 }

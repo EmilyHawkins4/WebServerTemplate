@@ -109,3 +109,48 @@ p {
     display: flex;
     justify-content: space-between;
 }
+#searchBar{
+    padding: 6px 10px;
+     margin: 8px 0;
+     margin-top: 20px;
+     margin-right: 5px;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+     width: 50%;
+}
+#searchButton {
+        font-size:15px;
+        text-decoration: none;
+        background-color: white;
+        border-style: none;
+        padding: 8px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 6px;
+        margin-right: 10px;
+}
+#searchButton:hover{
+      background-color: #316085;
+      color: white;
+}
+#cancelButton{
+        font-size:15px;
+        text-decoration: none;
+        background-color: white;
+        border-style: none;
+        padding: 8px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 6px;
+        margin-right: 10px;
+}
+#cancelButton:hover{
+      background-color: #316085;
+      color: white;
+}
