@@ -62,3 +62,17 @@ a:hover{
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
+p{
+    position: fixed;
+    bottom: 0;
+}
+
+#theFooter {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 10px;
+}
+#note {
+    margin-right: 10px;
+}

@@ -84,6 +84,7 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
     if (Post.lat == null || Post.lng == null){
         continue;}
     var latitude = Post.lat;
+    var tags = Post.tags;
     var longitude = Post.lng;
     var title = Post.title;
     var user = Post.username;
@@ -94,7 +95,7 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
       map: map,
     });
     markers[i].info = new google.maps.InfoWindow({
-      content: "<b>" + title + "</b><br/> Posted by: " + user + "<br/> <img class = photo src=" + img + " width=200px >"
+      content: "<b><h6>" + title + "</h6></b>"+ " <img class = photo src=" + img + " width='200px' height='150px'>"+"<strong>"+tags+"</strong>"+"<p> Posted by: " + user+"</p>"
     });
 
     lastWindow=null;
