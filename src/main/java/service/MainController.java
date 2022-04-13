@@ -28,10 +28,11 @@ public class MainController {
 	}
 
 	@GetMapping("/content")
-	public String content(@RequestParam(name="name", required=false) String name, Model model) {
-		model.addAttribute("posts", ConnectToDatabase.displayPosts(name));
+	public String content(@RequestParam(name="name", required=false) String name, @RequestParam(name="date", required=false) String date, Model model) {
+		model.addAttribute("posts", ConnectToDatabase.displayPosts(name, date));
 		System.out.println(name);
 		model.addAttribute("name", name);
+		model.addAttribute("date", date);
 		return "content";
 	}
 

@@ -63,7 +63,7 @@
                         </small>
                         <small class="text-muted">
                             Posted on:
-                            <span th:text = "${BumperStickerPost.date}"></span>
+                            <a th:href="@{/content?date={date}(date=${BumperStickerPost.date})}"><span th:text = "${BumperStickerPost.date}"></span></a>
                         </small>
 
                     </div>

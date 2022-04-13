@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.sql.*;
 
 public class ConnectToDatabase {
-    public static ArrayList<BumperStickerPost> displayPosts(String name) {
+    public static ArrayList<BumperStickerPost> displayPosts(String name, String dates) {
         String hostname = "hna.database.windows.net";
         String dbName = "BumperStickers";
         String user = "hna-admin";
@@ -19,7 +19,11 @@ public class ConnectToDatabase {
             String query1;
             if(name !=null){
                 query1 = "SELECT Id, Image, lat, long, title, username, date FROM Posts WHERE username= '"+name+"';";
-            }else {
+            }else if(dates !=null){
+                System.out.print("------------------------------");
+                System.out.print("date if executed");
+                query1 = "SELECT Id, Image, lat, long, title, username, date FROM Posts WHERE date= '"+dates+"';";
+            }else{
                 query1 = "SELECT Id, Image, lat, long, title, username, date FROM Posts;";
             }
             System.out.println("Query1: "+ query1);
