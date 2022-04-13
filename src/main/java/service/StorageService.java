@@ -14,7 +14,6 @@ import com.microsoft.azure.storage.blob.*;
 import org.springframework.web.multipart.MultipartFile;
 
 public class StorageService {
-    //private static final String CONNECTION_STRING = Configuration.getGlobalConfiguration().get(System.getenv("storageExplorerConnectionString"));
     public String StorageServices (MultipartFile file) throws IOException {
         try {
             String constr = System.getenv("storageExplorerConnectionString");
@@ -31,7 +30,6 @@ public class StorageService {
             System.out.println("ok!");
 
             return blob.getUri().toString();
-
         }
         catch (Exception e){
             System.err.println("Got an error!");

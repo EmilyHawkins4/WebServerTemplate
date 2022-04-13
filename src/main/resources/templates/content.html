@@ -46,7 +46,7 @@
         <div class="container" id="container">
             <div class="row">
             <div class="col-sm card-deck mt-4" th:each = "BumperStickerPost:${posts}" th:id="@{|card${BumperStickerPostStat.count}|}">
-                <div class="card">
+                <div class="card" th:id="@{|cards${BumperStickerPostStat.count}|}">
                     <div class="checkClick" th:lat="${BumperStickerPost.lat}" th:lng="${BumperStickerPost.lng}">
                         <div id="imgDiv">
                             <img class="card-img-top" th:src="${BumperStickerPost.image}" alt="Card image cap" height="200px"><!--width="18rem"-->
@@ -60,11 +60,11 @@
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">
-                            Posted by:
+                            By:
                             <a th:href="@{/content?name={username}(username=${BumperStickerPost.username})}"><span th:text = "${BumperStickerPost.username}"></span></a>
                         </small>
                         <small class="text-muted">
-                            Posted on:
+                            Date:
                             <a th:href="@{/content?date={date}(date=${BumperStickerPost.date})}"><span th:text = "${BumperStickerPost.date}"></span></a>
                         </small>
 

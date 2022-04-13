@@ -1,4 +1,3 @@
-// map setup
 let map;
 
 window.onload = function searchName(){

@@ -60,9 +60,7 @@ public class BumperStickerPost {
     public int getPostId(){return postId;}
 
     //set methods
-    public void setImage(String newImage){
-        image = newImage;
-    }
+    public void setImage(String newImage){ image = newImage;}
 
     public void setTags (ArrayList<String> newTag){
         tags = newTag;

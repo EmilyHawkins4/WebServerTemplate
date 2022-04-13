@@ -14,6 +14,9 @@ window.onload = function searchName(){
     if(url.includes("?name=")){
         var start = url.indexOf("=");
         var username = url.substring(start+1, url.length);
+        if(username.includes("%20")){
+            username = username.replace("%20", " ");
+        }
         document.getElementById("searchName").innerHTML = "<h5 id='showPost'>Posts by "+username+"</h5>";
         document.getElementById("optionalButton").innerHTML = "<button class='button-small'><a href='/content' id='homeButton'>Back to View!</a></button>";
         document.getElementById("pageHeading").style.paddingBottom = "0px";
@@ -116,6 +119,9 @@ else if (maxLat - minLat >= 20 || maxLng - minLng >= 20) {
         this.info.open(map, this);
         var targetCoordinates = '[lat=\"'+this.getPosition().lat()+'\"], [lng=\"'+this.getPosition().lng()+'\"]'
         document.querySelector(targetCoordinates).scrollIntoView({behavior: "smooth"});
+        //console.log("this is a card" +document.getAttribute("id", ("cards" + (i+1))));
+        //document.getAttribute("id", ("cards" + (i+1))).style.backgroundColor= "#cad9e6";
+        //document.querySelector("[id, cards"+(i+1)"]").style.backgroundColor= "#cad9e6";
         lastWindow= this.info;
     });
 
