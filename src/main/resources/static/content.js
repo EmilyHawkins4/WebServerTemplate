@@ -165,5 +165,8 @@ function search(){
 }
 
 function cancelSearch(){
-    location.reload();
+    for (var i = 0; i<postList.length; i++){
+        var j=i+1;
+        document.getElementById("card"+j).style.display = "block";
+    }
 }
