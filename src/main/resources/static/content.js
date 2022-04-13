@@ -17,6 +17,15 @@ window.onload = function searchName(){
         document.getElementById("container").style.marginTop = "0px";
 
     }
+    if(url.includes("?date=")){
+            var start = url.indexOf("=");
+            var date = url.substring(start+1, url.length);
+            document.getElementById("searchName").innerHTML = "<h5 id='showPost'>Posts from "+date+"</h5>";
+            document.getElementById("optionalButton").innerHTML = "<button class='button-small'><a href='/content' id='homeButton'>Back to View!</a></button>";
+            document.getElementById("pageHeading").style.paddingBottom = "0px";
+            document.getElementById("container").style.marginTop = "0px";
+
+        }
 
     // this displays the info window when a user clicks the card
     $(document).ready(function(){
