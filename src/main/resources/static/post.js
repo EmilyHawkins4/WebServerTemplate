@@ -40,7 +40,7 @@ function initMap() {
 
 // Create the initial InfoWindow.
   let infoWindow = new google.maps.InfoWindow({
-    content: "Select your bumbersticker's location!",
+    content: "Select your bumpersticker's location!",
     position: myLatlng,
   });
   let marker = new google.maps.Marker({
